@@ -1,52 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Misus Refractories</title>
+    <title>About Us | Misus Refractories And Allied Industries</title>
+    <meta name="description" content="About MISUS Refractories & Allied Industries — manufacturer, supplier and exporter of high-quality refractory products since 2009, located in Barjora, Bankura, West Bengal.">
     <style>
         .page-header {
             padding: 150px 0 80px;
-            background-color: var(--clr-secondary);
-            color: white;
-            text-align: center;
+            background: linear-gradient(135deg, var(--clr-primary-dark) 0%, var(--clr-primary) 100%);
+            color: white; text-align: center; position: relative; overflow: hidden;
         }
-
-        .about-content {
-            padding: var(--space-16) 0;
+        .page-header::after {
+            content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 60px;
+            background: var(--clr-background);
+            clip-path: ellipse(55% 100% at 50% 100%);
         }
+        .page-header h1 { color: white; }
+        .page-header p { color: rgba(255,255,255,0.8); }
 
-        .factsheet {
-            background-color: white;
-            padding: var(--space-8);
-            border-radius: 4px;
+        .factsheet-bar {
+            background: white;
             box-shadow: var(--shadow-md);
-            margin-top: -60px;
+            padding: var(--space-8) 0;
+            margin-top: -30px;
             position: relative;
             z-index: 10;
         }
-
-        .fact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-6);
+        .factsheet-inner {
+            display: flex; flex-wrap: wrap; gap: var(--space-6);
+            justify-content: space-around; align-items: center;
         }
-
-        .fact-item h5 {
+        .fact-item { text-align: center; }
+        .fact-item .fact-val {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
             color: var(--clr-primary);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            display: block;
+            line-height: 1;
+        }
+        .fact-item .fact-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--clr-text-muted);
+            margin-top: 4px;
+        }
+        .fact-divider {
+            width: 1px; height: 50px;
+            background: var(--clr-border);
         }
 
-        .fact-item p {
-            font-weight: 500;
+        .about-section { padding: var(--space-16) 0; background: var(--clr-background); }
+
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-12);
+            align-items: start;
+        }
+        @media(min-width: 992px) { .two-col-grid { grid-template-columns: 1fr 1fr; } }
+
+        .about-image-box {
+            position: relative;
+            overflow: hidden;
+        }
+        .about-image-box img { width: 100%; height: 500px; object-fit: cover; display: block; }
+        .about-image-box::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            border: 4px solid var(--clr-accent);
+            transform: translate(16px, 16px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .pill-list { list-style: none; padding: 0; margin: var(--space-4) 0; }
+        .pill-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--clr-border);
+            color: var(--clr-text-muted);
+            font-size: 0.95rem;
+            display: flex; align-items: center; gap: 0.75rem;
+        }
+        .pill-list li::before {
+            content: ''; display: inline-block;
+            width: 8px; height: 8px;
+            background: var(--clr-accent);
+            flex-shrink: 0;
+        }
+
+        .info-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-12);
+        }
+        .info-card {
+            background: white;
+            padding: var(--space-8);
+            border-top: 3px solid var(--clr-primary);
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+        }
+        .info-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+        .info-card h3 { font-size: 1.2rem; margin-bottom: var(--space-4); color: var(--clr-primary); }
+
+        .gst-block {
+            background: var(--clr-primary);
+            color: white;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            font-family: var(--font-display);
+            letter-spacing: 0.15em;
+            font-size: 1rem;
+            margin-top: var(--space-4);
+        }
+
+        .industries-strip {
+            background: var(--clr-secondary);
+            padding: var(--space-16) 0;
+            color: white;
+        }
+        .industries-strip .section-title { color: white; }
+        .industries-grid {
+            display: flex; flex-wrap: wrap; gap: var(--space-4);
+            margin-top: var(--space-8);
+        }
+        .industry-tag {
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: var(--space-4) var(--space-6);
+            color: rgba(255,255,255,0.85);
+            font-size: 0.95rem;
+            transition: all var(--transition-fast);
+        }
+        .industry-tag:hover {
+            border-color: var(--clr-accent);
+            background: rgba(230, 81, 0, 0.15);
+            color: white;
         }
     </style>
   <script type="module" crossorigin src="/assets/main-BvjGSVkh.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/main-WeqiBIUd.css">
 </head>
-
 <body>
     <nav class="navbar">
         <div class="container navbar-inner">
@@ -63,54 +160,134 @@
 
     <header class="page-header">
         <div class="container">
-            <h1 class="reveal">About Misus Refractories</h1>
-            <p class="reveal text-muted" style="max-width: 600px; margin: 1rem auto; color: rgba(255,255,255,0.7);">
-                Dedicated to manufacturing excellence and providing the foundational materials that power heavy
-                industries.</p>
+            <h1 class="reveal-up">About Our Company</h1>
+            <p class="reveal-up" style="max-width: 640px; margin: 1rem auto;">Manufacturer, Supplier & Exporter of high-quality refractory products since 2009 — Barjora, Bankura, West Bengal, India.</p>
         </div>
     </header>
 
-    <section class="container">
-        <div class="factsheet reveal">
-            <h2 style="margin-bottom: 2rem;">Company Factsheet</h2>
-            <div class="fact-grid">
+    <!-- Quick Facts Bar -->
+    <div class="factsheet-bar">
+        <div class="container">
+            <div class="factsheet-inner reveal-up">
                 <div class="fact-item">
-                    <h5>Nature of Business</h5>
-                    <p>Manufacturer</p>
+                    <span class="fact-val">2009</span>
+                    <span class="fact-label">Year of Establishment</span>
                 </div>
+                <div class="fact-divider"></div>
                 <div class="fact-item">
-                    <h5>Key Personnel</h5>
-                    <p>Monojit Sengupta & Mahua Sengupta</p>
+                    <span class="fact-val">14+</span>
+                    <span class="fact-label">Product Lines</span>
                 </div>
+                <div class="fact-divider"></div>
                 <div class="fact-item">
-                    <h5>Location</h5>
-                    <p>Bankura, West Bengal</p>
+                    <span class="fact-val">3</span>
+                    <span class="fact-label">Business Roles</span>
                 </div>
+                <div class="fact-divider"></div>
                 <div class="fact-item">
-                    <h5>Facility Type</h5>
-                    <p>Factory / Manufacturing</p>
+                    <span class="fact-val">7+</span>
+                    <span class="fact-label">Industries Served</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Main -->
+    <section class="about-section">
+        <div class="container">
+            <div class="two-col-grid">
+                <div class="about-image-box reveal-up">
+                    <img src="/assets/admin_building-ByxaKMmv.jpeg" alt="MISUS Refractories Facility">
+                </div>
+                <div class="reveal-up">
+                    <h2 class="section-title">Our Story</h2>
+                    <p style="margin-bottom: 1.5rem; color: var(--clr-text-muted); line-height: 1.8;">MISUS Refractories & Allied Industries is a manufacturer and supplier of high-quality refractory materials located in Barjora, Bankura, West Bengal. We specialize in producing refractory solutions used in high-temperature industrial operations such as steel manufacturing, blast furnaces, foundries, and other metallurgical processes.</p>
+                    <p style="margin-bottom: 1.5rem; color: var(--clr-text-muted); line-height: 1.8;">Since our establishment in 2009, the organization has focused on delivering reliable refractory materials that provide durability, thermal resistance, and consistent performance. Our commitment to quality manufacturing and long-term customer satisfaction drives every product we make.</p>
+                    <p style="color: var(--clr-text-muted); line-height: 1.8; margin-bottom: 1.5rem;">Our products are manufactured using carefully selected raw materials and controlled production processes to ensure stable chemical composition and reliable performance in demanding industrial environments.</p>
+                    <div>
+                        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--clr-text-muted); margin-bottom: 0.4rem;">GST Registration Number</p>
+                        <div class="gst-block">19AAWFM0044Q1ZI</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="about-content section">
+    <!-- Info Cards: Why Us / Management / Infrastructure / QA -->
+    <section class="section" style="background: white; padding: var(--space-16) 0;">
         <div class="container">
-            <div class="about-preview-grid">
-                <div class="about-image reveal">
-                    <img src="/assets/office_interior-CsnvvyAd.jpeg" alt="Misus Office" style="width: 100%; border-radius: 4px;">
+            <h2 class="section-title reveal-up">What Sets Us Apart</h2>
+            <div class="info-cards-grid reveal-grid">
+                <div class="info-card">
+                    <h3>Why Choose Us</h3>
+                    <ul class="pill-list">
+                        <li>High-quality refractory materials</li>
+                        <li>Consistent product performance</li>
+                        <li>Experienced technical team</li>
+                        <li>Reliable delivery schedules</li>
+                        <li>Competitive pricing</li>
+                        <li>Customer-focused service</li>
+                    </ul>
                 </div>
-                <div class="about-text reveal">
-                    <h2 class="section-title">A Legacy of Quality</h2>
-                    <p style="margin-bottom: 1.5rem;">Misus Refractories And Allied Industries is a premier manufacturer
-                        of high-grade refractory products. Established with a vision to deliver unparalleled quality, we
-                        specialize in Castables, Blast Furnace Ramming Mass, and a comprehensive range of monolithic
-                        refractories.</p>
-                    <p>Located in the industrial hub of Bankura, our advanced manufacturing facility allows us to
-                        process and formulate refractories that offer exceptional thermal stability, mechanical
-                        strength, and resistance to chemical attacks. We serve diverse sectors including steel, cement,
-                        power, and non-ferrous metals.</p>
+                <div class="info-card">
+                    <h3>Our Infrastructure</h3>
+                    <ul class="pill-list">
+                        <li>Raw material storage facilities</li>
+                        <li>Processing and mixing equipment</li>
+                        <li>Quality testing facilities</li>
+                        <li>Packaging and dispatch area</li>
+                        <li>Efficient logistics support</li>
+                    </ul>
                 </div>
+                <div class="info-card">
+                    <h3>Quality Assurance</h3>
+                    <ul class="pill-list">
+                        <li>Careful selection of raw materials</li>
+                        <li>Monitoring of production processes</li>
+                        <li>Chemical composition checks</li>
+                        <li>Strength and density testing</li>
+                        <li>Thermal resistance verification</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Management Focus</h3>
+                    <ul class="pill-list">
+                        <li>High manufacturing standards</li>
+                        <li>Strict quality control procedures</li>
+                        <li>Long-term customer relationships</li>
+                        <li>Improved product formulations</li>
+                        <li>Efficient supply chain operations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries We Serve -->
+    <section class="industries-strip">
+        <div class="container">
+            <h2 class="section-title reveal-up">Industries We Serve</h2>
+            <div class="industries-grid reveal-grid">
+                <div class="industry-tag">Steel Plants</div>
+                <div class="industry-tag">Iron & Foundry Industry</div>
+                <div class="industry-tag">Blast Furnace Operations</div>
+                <div class="industry-tag">Cement Industry</div>
+                <div class="industry-tag">Metal Processing Plants</div>
+                <div class="industry-tag">Thermal Processing Industries</div>
+                <div class="industry-tag">Industrial Furnace Operations</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facility Photos -->
+    <section class="section" style="background: var(--clr-background); padding: var(--space-16) 0;">
+        <div class="container">
+            <h2 class="section-title reveal-up">Our Facility</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); margin-top: var(--space-8);" class="reveal-grid">
+                <img src="/assets/gate-BtWvdGSX.jpeg" alt="Factory Gate" style="width:100%; height: 240px; object-fit: cover;">
+                <img src="/assets/machinery1-C_pIUt4G.jpeg" alt="Production Machinery" style="width:100%; height: 240px; object-fit: cover;">
+                <img src="/assets/machinery2-BZ0HX_H8.jpeg" alt="Industrial Equipment" style="width:100%; height: 240px; object-fit: cover;">
+                <img src="/assets/office_interior-CsnvvyAd.jpeg" alt="Office Interior" style="width:100%; height: 240px; object-fit: cover;">
             </div>
         </div>
     </section>
@@ -118,26 +295,25 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col reveal">
+                <div class="footer-col reveal-up">
                     <a href="/" class="navbar-brand" style="color: white; margin-bottom: 1rem;">
-                        MISUS <span style="color:var(--clr-primary)">REFRACTORY</span>
+                        MISUS <span style="color:var(--clr-accent)">REFRACTORY</span>
                     </a>
-                    <p>Manufacturer of Castables, Blast Furnace Ramming Mass & Nozzel Filling Compound from Bankura,
-                        West Bengal, India.</p>
+                    <p>Manufacturer, Supplier & Exporter of Castables, Blast Furnace Ramming Mass & Allied Refractory Products from Bankura, West Bengal, India.</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Est. 2009 &bull; GST: 19AAWFM0044Q1ZI</p>
                 </div>
-                <div class="footer-col reveal">
+                <div class="footer-col reveal-up">
                     <h4>Quick Links</h4>
                     <a href="/">Home</a>
                     <a href="/about.html">About Us</a>
                     <a href="/products.html">Products & Services</a>
                     <a href="/contact.html">Contact Us</a>
                 </div>
-                <div class="footer-col reveal">
+                <div class="footer-col reveal-up">
                     <h4>Get In Touch</h4>
-                    <p>Hat Ashuria More, P.O- U-Jambedia, Barjora District Bankura</p>
-                    <p>Bankura-722202, West Bengal, India</p>
-                    <br>
-                    <p>CEO: Monojit Sengupta</p>
+                    <p>Hat, Ashuria More, U-Jambedia<br>Barjora, Bankura – 722202<br>West Bengal, India</p>
+                    <p><a href="tel:+919434216176" style="color:rgba(255,255,255,0.7)">+91 94342 16176</a></p>
+                    <p><a href="mailto:misusbarjora@yahoo.com" style="color:rgba(255,255,255,0.7)">misusbarjora@yahoo.com</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -148,5 +324,4 @@
 
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
-
 </html>
