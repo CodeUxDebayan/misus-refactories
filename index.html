@@ -33,7 +33,12 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-bg">
-            <img src="/images/machinery2.jpeg" alt="High Temperature Machinery" id="hero-img">
+            <!-- Slideshow: 5 local images, each shown for ~5s, total cycle 25s -->
+            <div class="hero-slide" style="background-image: url('/images/machinery2.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('/images/admin_building.jpeg'); animation-delay: 5s;"></div>
+            <div class="hero-slide" style="background-image: url('/images/gate.jpeg'); animation-delay: 10s;"></div>
+            <div class="hero-slide" style="background-image: url('/images/machinery1.jpeg'); animation-delay: 15s;"></div>
+            <div class="hero-slide" style="background-image: url('/images/office_interior.jpeg'); animation-delay: 20s;"></div>
             <div class="hero-overlay"></div>
         </div>
         <div class="container hero-content">
@@ -50,6 +55,7 @@
             </div>
         </div>
     </header>
+
 
     <!-- Capabilities Section (New) -->
     <section class="section capabilities-section">

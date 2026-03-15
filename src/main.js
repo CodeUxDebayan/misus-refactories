@@ -86,21 +86,6 @@ revealGrids.forEach((grid) => {
   );
 });
 
-// Hero Parallax on Image
-const heroImg = document.getElementById('hero-img');
-if (heroImg) {
-    gsap.to(heroImg, {
-        yPercent: 30, // Parallax distance
-        ease: "none",
-        scrollTrigger: {
-            trigger: ".hero",
-            start: "top top",
-            end: "bottom top",
-            scrub: true
-        }
-    });
-}
-
 // Hero Title Line Reveal (simulate split text)
 const heroLines = document.querySelectorAll('.hero-title .line');
 if (heroLines.length > 0) {
