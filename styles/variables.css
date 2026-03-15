@@ -1,0 +1,56 @@
+:root {
+  /* === BLUE / WHITE / ORANGE PALETTE === */
+
+  --clr-background: #F5F8FC;        /* Cool steel-white background */
+  --clr-surface: #FFFFFF;
+
+  /* Blue - Primary brand color */
+  --clr-primary: #1565C0;           /* Deep Corporate Blue */
+  --clr-primary-dark: #003C8F;
+  --clr-primary-light: #5E92F3;
+
+  /* Orange - Accent / CTA color */
+  --clr-accent: #E65100;            /* Deep industrial orange */
+  --clr-accent-dark: #BF360C;
+  --clr-accent-light: #FF833A;
+
+  /* Dark - Headings and text */
+  --clr-secondary: #0D1B2A;         /* Near-black navy for formal text */
+  --clr-text-main: #1A2B3C;
+  --clr-text-muted: #5A7184;
+  --clr-border: #DDE6F0;
+
+  /* Typography */
+  --font-primary: 'Inter', sans-serif;
+  --font-display: 'Montserrat', sans-serif;
+
+  /* Spacing */
+  --space-2: 0.5rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Layout */
+  --container-width: 1400px;
+  --container-padding: var(--space-6);
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-normal: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow: 1s cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(21, 101, 192, 0.06);
+  --shadow-md: 0 8px 24px rgba(21, 101, 192, 0.1);
+  --shadow-lg: 0 16px 40px rgba(21, 101, 192, 0.12);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container-padding: var(--space-12);
+  }
+}

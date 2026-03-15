@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Misus Refractories</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <style>
+        .page-header {
+            padding: 150px 0 80px;
+            background-color: var(--clr-secondary);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-12);
+            padding: var(--space-16) 0;
+        }
+
+        @media (min-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact-info-card {
+            background: white;
+            padding: var(--space-8);
+            border-radius: 4px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--space-6);
+        }
+
+        .contact-info-card h4 {
+            color: var(--clr-primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-info-card p {
+            margin-bottom: 0.5rem;
+            color: var(--clr-secondary);
+        }
+
+        .contact-form {
+            background: white;
+            padding: var(--space-8);
+            border-radius: 4px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--clr-border);
+            border-radius: 2px;
+            font-family: var(--font-primary);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--clr-primary);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container navbar-inner">
+            <a href="/" class="navbar-brand">MISUS <span>REFRACTORY</span></a>
+            <button class="mobile-toggle" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/about.html" class="nav-link">About Us</a>
+                <a href="/products.html" class="nav-link">Products</a>
+                <a href="/contact.html" class="nav-link active">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="reveal">Get In Touch</h1>
+            <p class="reveal text-muted" style="max-width: 600px; margin: 1rem auto; color: rgba(255,255,255,0.7);">
+                Ready to source premium refractories? Our team is standing by to assist with your requirements.</p>
+        </div>
+    </header>
+
+    <div class="container contact-grid">
+        <div class="contact-details reveal">
+            <h2 class="section-title">Reach Us</h2>
+
+            <div class="contact-info-card">
+                <h4>Registered Facility</h4>
+                <p><strong>Misus Refractories And Allied Industries</strong></p>
+                <p>Hat Ashuria More, P.O- U-Jambedia,</p>
+                <p>Barjora District Bankura,</p>
+                <p>Bankura-722202, West Bengal, India</p>
+            </div>
+
+            <div class="contact-info-card">
+                <h4>Contact Persons</h4>
+                <p><strong>Monojit Sengupta</strong> (CEO)</p>
+                <p><strong>Mahua Sengupta</strong></p>
+            </div>
+
+            <div class="contact-info-card">
+                <h4>Direct Contact</h4>
+                <p>Email: sales@misusrefractories.com</p>
+                <p>Phone: +91 XXXXX XXXXX</p>
+            </div>
+        </div>
+
+        <div class="contact-form-container reveal">
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                <h3 style="margin-bottom: 2rem; font-family: var(--font-display);">Send us a Message</h3>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" class="form-control" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" required placeholder="john@company.com">
+                </div>
+                <div class="form-group">
+                    <label for="product">Interested Product</label>
+                    <select id="product" class="form-control">
+                        <option>Castables</option>
+                        <option>Blast Furnace Ramming Mass</option>
+                        <option>Nozzle Filling Compound</option>
+                        <option>High Alumina Gunning</option>
+                        <option>Other / General Inquiry</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Requirements</label>
+                    <textarea id="message" class="form-control" required
+                        placeholder="Please describe your operational needs..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col reveal">
+                    <a href="/" class="navbar-brand" style="color: white; margin-bottom: 1rem;">
+                        MISUS <span style="color:var(--clr-primary)">REFRACTORY</span>
+                    </a>
+                    <p>Manufacturer of Castables, Blast Furnace Ramming Mass & Nozzel Filling Compound from Bankura,
+                        West Bengal, India.</p>
+                </div>
+                <div class="footer-col reveal">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/about.html">About Us</a>
+                    <a href="/products.html">Products & Services</a>
+                    <a href="/contact.html">Contact Us</a>
+                </div>
+                <div class="footer-col reveal">
+                    <h4>Get In Touch</h4>
+                    <p>Hat Ashuria More, P.O- U-Jambedia, Barjora District Bankura</p>
+                    <p>Bankura-722202, West Bengal, India</p>
+                    <br>
+                    <p>CEO: Monojit Sengupta</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> Misus Refractories And Allied Industries. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

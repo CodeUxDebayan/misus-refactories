@@ -1,0 +1,361 @@
+/* Home Page Styles */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  padding-top: 80px; 
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.0); 
+  /* Parallax will be handled by GSAP now */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(28, 35, 49, 0.95) 0%, rgba(28, 35, 49, 0.5) 100%);
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.hero-subtitle {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--clr-accent-light); /* Orange accent line */
+  margin-bottom: var(--space-6);
+  position: relative;
+}
+
+.hero-subtitle::before {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background-color: var(--clr-primary-light);
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 7vw, 6rem);
+  color: white;
+  margin-bottom: var(--space-6);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Specific span wrapper for GSAP split text animation imitation */
+.hero-title .line-wrap {
+  display: block;
+  overflow: hidden;
+}
+
+.hero-title .line {
+  display: block;
+}
+
+.hero-desc {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: var(--space-8);
+  max-width: 650px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.hero-actions .btn-outline {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero-actions .btn-outline:hover {
+  background-color: white;
+  color: var(--clr-secondary);
+}
+
+/* Capabilities (New) */
+.capabilities-section {
+  background-color: var(--clr-background);
+  position: relative;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+.cap-card {
+  background: var(--clr-surface);
+  padding: var(--space-8);
+  border-top: 2px solid var(--clr-border);
+  transition: all var(--transition-normal);
+}
+
+.cap-card:hover {
+  border-top-color: var(--clr-primary);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-sm);
+}
+
+.cap-icon {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--clr-border);
+  margin-bottom: var(--space-4);
+  transition: color var(--transition-fast);
+}
+
+.cap-card:hover .cap-icon {
+  color: var(--clr-primary);
+}
+
+.cap-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-4);
+}
+
+.cap-card p {
+  color: var(--clr-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Product Showcase - Modernized */
+.product-showcase {
+  background-color: var(--clr-surface);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-background);
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform var(--transition-normal);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-md);
+}
+
+.product-img-wrap {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.product-card:hover .product-img-wrap img {
+  transform: scale(1.05);
+}
+
+.product-card-content {
+  padding: var(--space-6);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card-content h3 {
+  font-size: 1.35rem;
+  color: var(--clr-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.product-card-content p {
+  color: var(--clr-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: var(--space-4);
+  flex-grow: 1;
+}
+
+.product-link {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--clr-accent); /* Orange product link arrow */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* Industries Served (New) */
+.industries-section {
+  background-color: var(--clr-secondary);
+  color: white;
+}
+
+.industries-section .section-title {
+  color: white;
+}
+
+.industries-section .section-title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.industries-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-12);
+}
+
+.industry-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-6) var(--space-8);
+  transition: all var(--transition-normal);
+  cursor: default;
+}
+
+.industry-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--clr-primary);
+}
+
+.industry-item h4 {
+  color: white;
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* About Section Preview */
+.about-preview {
+  background-color: var(--clr-surface);
+}
+
+.about-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .about-preview-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about-text {
+  padding-right: var(--space-8);
+}
+
+.about-image {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--clr-border);
+}
+
+.stat-item h4 {
+  font-size: 3.5rem;
+  color: var(--clr-accent); /* Orange stats */
+  margin-bottom: var(--space-2);
+  line-height: 1;
+  font-weight: 300;
+}
+
+.stat-item p {
+  color: var(--clr-text-main);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+/* CTA */
+.cta-section {
+  background-color: var(--clr-accent); /* Orange CTA section */
+  color: white;
+  text-align: center;
+  padding: var(--space-16) 0;
+}
+
+.cta-section h2 {
+  color: white;
+  margin-bottom: var(--space-6);
+  font-size: 2.5rem;
+}
+
+.cta-section .btn-outline {
+  border-color: white;
+  color: white;
+}
+
+.cta-section .btn-outline:hover {
+  background-color: white;
+  color: var(--clr-primary);
+}

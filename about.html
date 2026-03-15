@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Misus Refractories</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <style>
+        .page-header {
+            padding: 150px 0 80px;
+            background-color: var(--clr-secondary);
+            color: white;
+            text-align: center;
+        }
+
+        .about-content {
+            padding: var(--space-16) 0;
+        }
+
+        .factsheet {
+            background-color: white;
+            padding: var(--space-8);
+            border-radius: 4px;
+            box-shadow: var(--shadow-md);
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .fact-item h5 {
+            color: var(--clr-primary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .fact-item p {
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container navbar-inner">
+            <a href="/" class="navbar-brand">MISUS <span>REFRACTORY</span></a>
+            <button class="mobile-toggle" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/about.html" class="nav-link active">About Us</a>
+                <a href="/products.html" class="nav-link">Products</a>
+                <a href="/contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="reveal">About Misus Refractories</h1>
+            <p class="reveal text-muted" style="max-width: 600px; margin: 1rem auto; color: rgba(255,255,255,0.7);">
+                Dedicated to manufacturing excellence and providing the foundational materials that power heavy
+                industries.</p>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="factsheet reveal">
+            <h2 style="margin-bottom: 2rem;">Company Factsheet</h2>
+            <div class="fact-grid">
+                <div class="fact-item">
+                    <h5>Nature of Business</h5>
+                    <p>Manufacturer</p>
+                </div>
+                <div class="fact-item">
+                    <h5>Key Personnel</h5>
+                    <p>Monojit Sengupta & Mahua Sengupta</p>
+                </div>
+                <div class="fact-item">
+                    <h5>Location</h5>
+                    <p>Bankura, West Bengal</p>
+                </div>
+                <div class="fact-item">
+                    <h5>Facility Type</h5>
+                    <p>Factory / Manufacturing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-content section">
+        <div class="container">
+            <div class="about-preview-grid">
+                <div class="about-image reveal">
+                    <img src="/images/office_interior.jpeg" alt="Misus Office" style="width: 100%; border-radius: 4px;">
+                </div>
+                <div class="about-text reveal">
+                    <h2 class="section-title">A Legacy of Quality</h2>
+                    <p style="margin-bottom: 1.5rem;">Misus Refractories And Allied Industries is a premier manufacturer
+                        of high-grade refractory products. Established with a vision to deliver unparalleled quality, we
+                        specialize in Castables, Blast Furnace Ramming Mass, and a comprehensive range of monolithic
+                        refractories.</p>
+                    <p>Located in the industrial hub of Bankura, our advanced manufacturing facility allows us to
+                        process and formulate refractories that offer exceptional thermal stability, mechanical
+                        strength, and resistance to chemical attacks. We serve diverse sectors including steel, cement,
+                        power, and non-ferrous metals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col reveal">
+                    <a href="/" class="navbar-brand" style="color: white; margin-bottom: 1rem;">
+                        MISUS <span style="color:var(--clr-primary)">REFRACTORY</span>
+                    </a>
+                    <p>Manufacturer of Castables, Blast Furnace Ramming Mass & Nozzel Filling Compound from Bankura,
+                        West Bengal, India.</p>
+                </div>
+                <div class="footer-col reveal">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/about.html">About Us</a>
+                    <a href="/products.html">Products & Services</a>
+                    <a href="/contact.html">Contact Us</a>
+                </div>
+                <div class="footer-col reveal">
+                    <h4>Get In Touch</h4>
+                    <p>Hat Ashuria More, P.O- U-Jambedia, Barjora District Bankura</p>
+                    <p>Bankura-722202, West Bengal, India</p>
+                    <br>
+                    <p>CEO: Monojit Sengupta</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> Misus Refractories And Allied Industries. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

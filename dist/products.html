@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products & Services | Misus Refractories</title>
+    <meta name="description"
+        content="Full product catalogue of Misus Refractories: Castables, Blast Furnace Ramming Mass, Nozzle Filling Compound, High Alumina Gunning, Gunning Masses, Ramming Masses, Basic Monolithic and more.">
+    <style>
+        .page-header {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, var(--clr-primary-dark) 0%, var(--clr-primary) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: var(--clr-background);
+            clip-path: ellipse(55% 100% at 50% 100%);
+        }
+
+        .page-header h1 {
+            color: white;
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .product-list {
+            padding: var(--space-16) 0;
+            background: var(--clr-background);
+        }
+
+        .product-card-horizontal {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            overflow: hidden;
+            margin-bottom: var(--space-8);
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid transparent;
+            transition: border-color var(--transition-fast), box-shadow var(--transition-normal), transform var(--transition-normal);
+        }
+
+        @media (min-width: 768px) {
+            .product-card-horizontal {
+                flex-direction: row;
+                min-height: 320px;
+            }
+        }
+
+        .product-card-horizontal:hover {
+            border-left-color: var(--clr-accent);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .product-img {
+            flex: 0 0 40%;
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .product-card-horizontal:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--clr-accent);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.3rem 0.7rem;
+        }
+
+        .product-info {
+            padding: var(--space-8);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-info h3 {
+            font-size: 1.6rem;
+            color: var(--clr-secondary);
+            margin-bottom: 0.8rem;
+        }
+
+        .product-info p {
+            color: var(--clr-text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .product-specs {
+            background: var(--clr-background);
+            border: 1px solid var(--clr-border);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .product-specs table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .product-specs th {
+            background: var(--clr-primary);
+            color: white;
+            padding: 0.5rem 0.8rem;
+            text-align: left;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .product-specs td {
+            padding: 0.5rem 0.8rem;
+            border-bottom: 1px solid var(--clr-border);
+            color: var(--clr-text-main);
+        }
+
+        .product-specs tr:last-child td {
+            border-bottom: none;
+        }
+
+        .btn-accent {
+            background-color: var(--clr-accent);
+            color: white;
+        }
+
+        .btn-accent:hover {
+            background-color: var(--clr-accent-dark);
+            color: white;
+        }
+    </style>
+  <script type="module" crossorigin src="/assets/main-BvjGSVkh.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-WeqiBIUd.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container navbar-inner">
+            <a href="/" class="navbar-brand">MISUS <span>REFRACTORY</span></a>
+            <button class="mobile-toggle" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/about.html" class="nav-link">About Us</a>
+                <a href="/products.html" class="nav-link active">Products</a>
+                <a href="/contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="reveal-up">Products & Services</h1>
+            <p class="reveal-up" style="max-width: 640px; margin: 1rem auto;">Engineered for maximum thermal efficiency
+                and structural integrity. Browse our complete range of refractory manufacturing solutions.</p>
+        </div>
+    </header>
+
+    <section class="product-list container">
+
+        <!-- 1. Castables -->
+        <div class="product-card-horizontal reveal-up" id="castables">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
+                    alt="Castables">
+                <span class="product-badge">Flagship Product</span>
+            </div>
+            <div class="product-info">
+                <h3>Castables</h3>
+                <p>The <strong>MR-Crete range</strong> of conventional castables are generally usable for moderate and
+                    high heat applications. These are Calcium Aluminate bonded refractories for applications up to
+                    <strong>1400°C</strong>. High Alumina conventional castables are made with alumina aggregate and
+                    high alumina refractory cement, suitable up to <strong>1700°C</strong>. Low Cement Castables are
+                    available from 45% to 90% Al₂O₃ content, suitable up to <strong>1800°C</strong>, with low porosity,
+                    better corrosion and erosion resistance, and good thermal shock resistance. Wide range of insulating
+                    castables available for both hot face and backup refractory lining.</p>
+                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
+            </div>
+        </div>
+
+        <!-- 2. Blast Furnace Ramming Mass -->
+        <div class="product-card-horizontal reveal-up" id="ramming-mass">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80"
+                    alt="Blast Furnace Ramming Mass">
+            </div>
+            <div class="product-info">
+                <h3>Blast Furnace Ramming Mass</h3>
+                <p>Premium ramming mass designed specifically for blast furnace runners and hearths. Formulated for
+                    excellent resistance to corrosion from molten iron and slag, ensuring extended campaign life.
+                    Provides outstanding mechanical strength and thermal stability at elevated temperatures common in
+                    iron-making operations.</p>
+                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
+            </div>
+        </div>
+
+        <!-- 3. Nozzle Filling Compound -->
+        <div class="product-card-horizontal reveal-up" id="nozzle-filling">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1629910006734-eab798ebce09?auto=format&fit=crop&w=800&q=80"
+                    alt="Nozzle Filling Compound">
+            </div>
+            <div class="product-info">
+                <h3>NozCEOling Compound</h3>
+                <p>Specially developed free-flowing compound used for filling slide gate nozzles in steel ladles.
+                    Guarantees high free-opening rates and effectively prevents steel penetration into the nozzle
+                    assembly. Formulated for consistent flow characteristics and excellent sintering behavior under
+                    service conditions to ensure safe steel-casting operations.</p>
+                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
+            </div>
+        </div>
+
+        <!-- 4. High Alumina Gunning -->
+        <div class="product-card-horizontal reveal-up" id="high-alumina-gunning">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80"
+                    alt="High Alumina Gunning">
+            </div>
+            <div class="product-info">
+                <h3>High Alumina Gunning</h3>
+                <p>Designed for hot and cold gunning repair of various industrial furnaces and ladles. Features
+                    excellent adhesion to the substrate, negligible rebound loss during application, and sets rapidly to
+                    form a dense, strong monolithic structure. Ideal for maintaining and extending the life of existing
+                    refractory linings.</p>
+                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
+            </div>
+        </div>
+
+        <!-- 5. Gunning Masses -->
+        <div class="product-card-horizontal reveal-up" id="gunning-masses">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+                    alt="Gunning Masses">
+            </div>
+            <div class="product-info">
+                <h3>Gunning Masses</h3>
+                <p>Versatile refractory gunning masses suitable for a broad range of furnace maintenance applications.
+                    Available in various compositions to address specific wear conditions, including silica,
+                    alumina-silica, and high-alumina grades. Applied using conventional gunning equipment for rapid,
+                    cost-effective furnace repair.</p>
+                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
+            </div>
+        </div>
+
+        <!-- 6. Ramming Masses -->
+        <div class="product-card-horizontal reveal-up" id="ramming-masses">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1562408590-e32931084e23?auto=format&fit=crop&w=800&q=80"
+                    alt="Ramming Masses">
+            </div>
+            <div class="product-info">
+                <h3>Ramming Masses</h3>
+                <p>High-quality ramming masses for induction furnace lining, coreless and channel type, available in
+                    acidic, neutral, and basic grades. Engineered for excellent sintering behavior and outstanding
+                    resistance to molten metal attack, ensuring long service life and dimensional stability.</p>
+                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
+            </div>
+        </div>
+
+        <!-- 7. Basic Monolithic -->
+        <div class="product-card-horizontal reveal-up" id="basic-monolithic">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
+                    alt="Basic Monolithic">
+                <span class="product-badge">Specs Available</span>
+            </div>
+            <div class="product-info">
+                <h3>Basic Monolithic</h3>
+                <p>Complete range of basic monolithic refractories for BOF and EAF applications. Supplied as ramming and
+                    gunning masses for maintenance and repair of basic-lined vessels. Formulated with high MgO content
+                    for superior resistance to basic slag at extreme temperatures.</p>
+                <div class="product-specs">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>MgO%</th>
+                                <th>SiO₂%</th>
+                                <th>Grading (mm)</th>
+                                <th>Sintering (°C)</th>
+                                <th>Application (°C)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MR RAM-85</td>
+                                <td>85.00</td>
+                                <td>6.0</td>
+                                <td>0–5</td>
+                                <td>1550</td>
+                                <td>1700</td>
+                            </tr>
+                            <tr>
+                                <td>MR RAM-86</td>
+                                <td>86.00</td>
+                                <td>6.0</td>
+                                <td>0–5</td>
+                                <td>1550</td>
+                                <td>1700</td>
+                            </tr>
+                            <tr>
+                                <td>MR GUN-80</td>
+                                <td>80.00</td>
+                                <td>7.0</td>
+                                <td>0–3</td>
+                                <td>1500</td>
+                                <td>1700</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
+            </div>
+        </div>
+
+        <!-- 8. Blast Furnace Tap Hole Mass -->
+        <div class="product-card-horizontal reveal-up" id="tap-hole-mass">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1429514538650-f9fb543e1b07?auto=format&fit=crop&w=800&q=80"
+                    alt="Blast Furnace Tap Hole Mass">
+            </div>
+            <div class="product-info">
+                <h3>Blast Furnace Tap Hole Mass</h3>
+                <p>Specially formulated tap hole clay for sealing blast furnace tap holes after each cast. Engineered
+                    for consistent plug formation, excellent penetration resistance against hot metal and slag, and
+                    reliable drilling characteristics for the next cast. Properties are tailored for different furnace
+                    sizes and operational conditions.</p>
+                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col reveal-up">
+                    <a href="/" class="navbar-brand" style="color: white; margin-bottom: 1rem;">
+                        MISUS <span style="color:var(--clr-accent)">REFRACTORY</span>
+                    </a>
+                    <p>Manufacturer of Castables, Blast Furnace Ramming Mass & Nozzle Filling Compound from Bankura,
+                        West Bengal, India.</p>
+                </div>
+                <div class="footer-col reveal-up">
+                    <h4>Products</h4>
+                    <a href="#castables">Castables</a>
+                    <a href="#ramming-mass">Blast Furnace Ramming Mass</a>
+                    <a href="#nozzle-filling">Nozzle Filling Compound</a>
+                    <a href="#basic-monolithic">Basic Monolithic</a>
+                </div>
+                <div class="footer-col reveal-up">
+                    <h4>Get In Touch</h4>
+                    <p>Hat Ashuria More, P.O- U-Jambedia, Barjora District Bankura</p>
+                    <p>Bankura-722202, West Bengal, India</p>
+                    <br>
+                    <p>Partner: Monojit Sengupta</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> Misus Refractories And Allied Industries. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>
