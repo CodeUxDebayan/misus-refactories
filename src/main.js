@@ -1,8 +1,22 @@
 import Lenis from '@studio-freight/lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { initBrochureFlipbook } from './flipbook.js';
 
 gsap.registerPlugin(ScrollTrigger);
+
+// Initialize Dual-Page Brochure Slideshow if present
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('brochure-flipbook')) {
+      initBrochureFlipbook('brochure-flipbook');
+    }
+  });
+} else {
+  if (document.getElementById('brochure-flipbook')) {
+    initBrochureFlipbook('brochure-flipbook');
+  }
+}
 
 // Initialize smooth scrolling
 const lenis = new Lenis({

@@ -50,12 +50,12 @@
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  /* Stronger left-dark gradient so headings are always clear */
-  background: linear-gradient(
-    to right,
-    rgba(10, 20, 40, 0.88) 0%,
-    rgba(10, 20, 40, 0.55) 60%,
-    rgba(10, 20, 40, 0.35) 100%
+  /* Darkened overlay for maximum text contrast across all slides */
+  background: radial-gradient(
+    circle at center,
+    rgba(8, 15, 30, 0.78) 0%,
+    rgba(8, 15, 30, 0.85) 60%,
+    rgba(5, 10, 20, 0.93) 100%
   );
   z-index: 1; /* Must sit above the slides */
 }
@@ -63,27 +63,36 @@
 .hero-content {
   position: relative;
   z-index: 2; /* Content above overlay */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-subtitle {
-  display: block;
-  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.25em;
   color: var(--clr-accent-light); /* Orange accent line */
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-4);
   position: relative;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
 }
 
-.hero-subtitle::before {
+.hero-subtitle::before,
+.hero-subtitle::after {
   content: '';
   display: inline-block;
-  width: 40px;
+  width: 35px;
   height: 1px;
-  background-color: var(--clr-primary-light);
-  vertical-align: middle;
-  margin-right: 15px;
+  background-color: var(--clr-accent-light);
+  opacity: 0.85;
 }
 
 .hero-title {
@@ -93,6 +102,7 @@
   line-height: 1.05;
   font-weight: 700;
   letter-spacing: -0.03em;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9), 0 2px 6px rgba(0, 0, 0, 0.95);
 }
 
 /* Specific span wrapper for GSAP split text animation imitation */
@@ -107,17 +117,21 @@
 
 .hero-desc {
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: var(--space-8);
-  max-width: 650px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
   font-weight: 300;
   line-height: 1.8;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
 }
 
 .hero-actions {
   display: flex;
   gap: var(--space-4);
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .hero-actions .btn-outline {
@@ -382,3 +396,284 @@
   background-color: white;
   color: var(--clr-primary);
 }
+
+/* ==========================================================================
+   Clients Marquee & Showcase
+   ========================================================================== */
+.clients-section {
+  padding: 5.5rem 0;
+  background: white;
+  border-bottom: 1px solid var(--clr-border);
+  overflow: hidden;
+}
+
+.clients-section .section-header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.clients-section .section-title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.clients-marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.clients-marquee-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: clientsScroll 35s linear infinite;
+}
+
+.clients-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes clientsScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.client-logo-card {
+  flex: 0 0 160px;
+  height: 100px;
+  background: white;
+  border: 1px solid var(--clr-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.client-logo-card:hover {
+  border-color: var(--clr-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.client-logo-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(10%);
+  transition: filter var(--transition-fast), transform var(--transition-fast);
+}
+
+.client-logo-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.client-grid-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1rem;
+  margin-top: var(--space-8);
+}
+
+/* ==========================================================================
+   Turnkey Services & On-Site Solutions
+   ========================================================================== */
+.services-section {
+  padding: 6.5rem 0;
+  background: linear-gradient(135deg, #0f1c2e 0%, #15273f 100%);
+  color: white;
+}
+
+.services-section .section-title {
+  color: white;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  margin-top: var(--space-10);
+}
+
+@media (min-width: 992px) {
+  .services-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+  }
+}
+
+.services-content h3 {
+  color: var(--clr-accent-light);
+  font-size: 1.8rem;
+  margin-bottom: var(--space-4);
+}
+
+.services-content p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-6);
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.services-item {
+  display: flex;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--clr-accent);
+  padding: 1rem 1.25rem;
+  transition: background var(--transition-fast);
+}
+
+.services-item:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.services-item-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--clr-accent-light);
+  font-size: 1.2rem;
+}
+
+.services-item h4 {
+  color: white;
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.services-item p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.services-media {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.services-media-dual {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.services-media-card {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #0d1b2a;
+}
+
+.services-media-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.services-media-card:hover img {
+  transform: scale(1.03);
+}
+
+.services-media-card .card-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(13, 27, 42, 0.95) 0%, rgba(13, 27, 42, 0.6) 70%, transparent 100%);
+  padding: 0.85rem 1.25rem;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.services-media-card .card-caption strong {
+  color: var(--clr-accent-light);
+}
+
+
+/* ==========================================================================
+   Modern Plant & Automated Packaging Tour (Video Section)
+   ========================================================================== */
+.video-tour-section {
+  padding: 6.5rem 0;
+  background: var(--clr-surface);
+}
+
+.video-tour-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .video-tour-grid {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+.video-tour-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: var(--space-4);
+}
+
+.video-tour-text p {
+  color: var(--clr-text-muted);
+  line-height: 1.75;
+  margin-bottom: var(--space-6);
+}
+
+.video-feature-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: var(--space-6);
+}
+
+.video-tag {
+  background: white;
+  border: 1px solid var(--clr-border);
+  color: var(--clr-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 2px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--clr-border);
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+

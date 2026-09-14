@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700&display=swap');
 @import './variables.css';
+@import './flipbook.css';
 
 /* Base Reset */
 *, *::before, *::after {
@@ -120,9 +121,34 @@ ul, ol {
   padding: var(--space-24) 0;
 }
 
+.eyebrow {
+  display: block;
+  width: 100%;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--clr-accent);
+  margin-bottom: 0.5rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-header.text-left {
+  align-items: flex-start;
+  text-align: left;
+}
+
 .section-title {
   font-size: 2.5rem;
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-8);
   position: relative;
   display: inline-block;
 }
@@ -135,6 +161,11 @@ ul, ol {
   width: 60px;
   height: 4px;
   background-color: var(--clr-accent); /* Orange accent underline */
+}
+
+.section-header.text-center .section-title::after {
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Global Navbar */
@@ -164,16 +195,38 @@ ul, ol {
 
 .navbar-brand {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--clr-secondary);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  text-decoration: none;
 }
 
-.navbar-brand span {
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-main {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--clr-secondary);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.brand-main strong {
   color: var(--clr-primary);
+}
+
+.brand-sub {
+  font-family: var(--font-primary);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clr-accent);
+  margin-top: 1px;
 }
 
 .nav-links {
@@ -284,3 +337,293 @@ ul, ol {
     left: 0;
   }
 }
+
+/* ==========================================================================
+   Corporate Timeline (Milestones 2004 - 2025)
+   ========================================================================== */
+.milestones-section {
+  padding: var(--space-20) 0;
+  background: white;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: var(--space-12) auto 0;
+  padding-left: 2rem;
+  border-left: 2px solid var(--clr-primary);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--space-10);
+  padding-left: 1.5rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.75rem;
+  top: 0.25rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--clr-accent);
+  border: 4px solid white;
+  box-shadow: 0 0 0 2px var(--clr-accent);
+}
+
+.timeline-year {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+  margin-bottom: 0.35rem;
+}
+
+.timeline-content h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+  color: var(--clr-secondary);
+}
+
+.timeline-content p {
+  color: var(--clr-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   CSR & Community Initiatives
+   ========================================================================== */
+.csr-section {
+  padding: var(--space-20) 0;
+  background: var(--clr-surface);
+}
+
+.csr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8);
+  margin-top: var(--space-10);
+}
+
+.csr-card {
+  background: white;
+  padding: var(--space-8);
+  border-top: 3px solid var(--clr-accent);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal);
+}
+
+.csr-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.csr-card h3 {
+  font-size: 1.25rem;
+  color: var(--clr-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.csr-card p {
+  color: var(--clr-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Management & Contact Directory Cards
+   ========================================================================== */
+.directory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.directory-card {
+  background: white;
+  padding: var(--space-6);
+  border: 1px solid var(--clr-border);
+  border-left: 4px solid var(--clr-primary);
+  transition: all var(--transition-fast);
+}
+
+.directory-card:hover {
+  border-left-color: var(--clr-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.directory-card h4 {
+  font-size: 1.15rem;
+  color: var(--clr-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.directory-role {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--clr-accent);
+  margin-bottom: var(--space-4);
+}
+
+.directory-contacts a {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--clr-text-main);
+  margin-bottom: 0.35rem;
+}
+
+.directory-contacts a:hover {
+  color: var(--clr-primary);
+}
+
+/* ==========================================================================
+   Product Specifications Table Styling
+   ========================================================================== */
+.specs-table-wrapper {
+  overflow-x: auto;
+  margin: var(--space-4) 0 var(--space-6);
+  border: 1px solid var(--clr-border);
+  background: white;
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  min-width: 600px;
+}
+
+.specs-table th {
+  background: #0f1c2e;
+  color: white;
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.specs-table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--clr-border);
+  border-right: 1px solid var(--clr-border);
+  color: var(--clr-text-main);
+}
+
+.specs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.specs-table tr:hover {
+  background: rgba(230, 81, 0, 0.04);
+}
+
+.specs-table td strong {
+  color: var(--clr-primary);
+}
+
+.product-card-fullwidth {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  overflow: hidden;
+  margin-bottom: var(--space-10);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--clr-primary);
+  padding: var(--space-8);
+  transition: all var(--transition-normal);
+}
+
+.product-card-fullwidth:hover {
+  border-left-color: var(--clr-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.product-header-inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.product-card-fullwidth h3 {
+  font-size: 1.7rem;
+  color: var(--clr-secondary);
+  margin: 0;
+}
+
+.product-card-fullwidth p {
+  color: var(--clr-text-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+/* ==========================================================================
+   Awards & Testimonials Grid (Brochure Page 13 individual crops)
+   ========================================================================== */
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.award-card {
+  background: white;
+  border: 1px solid var(--clr-border);
+  border-radius: 4px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.award-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--clr-accent);
+}
+
+.award-card-img {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.award-card-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.award-card h4 {
+  font-size: 0.95rem;
+  color: var(--clr-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.award-card p {
+  font-size: 0.8rem;
+  color: var(--clr-text-muted);
+  margin: 0;
+}
+

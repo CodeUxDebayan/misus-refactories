@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Misus Refractories And Allied Industries</title>
-    <meta name="description" content="Contact MISUS Refractories & Allied Industries. Phone: +91 94342 16176 | Email: misusbarjora@yahoo.com | Barjora, Bankura, West Bengal, India.">
+    <title>Contact Us &amp; Key Personnel Directory | Misus Refractories (MRAI)</title>
+    <meta name="description"
+        content="Contact Misus Refractories & Allied Industries. Executive directory for CEO Monojit Sengupta, Trade Consultant Sourav Sarkar, Marketing DGM Prasanta Thakura, and HR Head Sukumar Biswas.">
     <style>
         .page-header {
             padding: 150px 0 80px;
             background: linear-gradient(135deg, var(--clr-primary-dark) 0%, var(--clr-primary) 100%);
-            color: white; text-align: center; position: relative; overflow: hidden;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        .page-header::after {
-            content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 60px;
-            background: var(--clr-background); clip-path: ellipse(55% 100% at 50% 100%);
-        }
-        .page-header h1 { color: white; }
-        .page-header p { color: rgba(255,255,255,0.8); }
 
-        .contact-section { padding: var(--space-16) 0; }
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: var(--clr-background);
+            clip-path: ellipse(55% 100% at 50% 100%);
+        }
+
+        .contact-section {
+            padding: var(--space-16) 0;
+        }
 
         .contact-layout {
             display: grid;
@@ -26,70 +38,75 @@
             gap: var(--space-12);
             align-items: start;
         }
-        @media(min-width: 992px) { .contact-layout { grid-template-columns: 2fr 3fr; } }
 
-        .contact-info { display: flex; flex-direction: column; gap: var(--space-4); }
-
-        .info-block {
-            background: white;
-            padding: var(--space-6);
-            border-left: 4px solid var(--clr-primary);
-            box-shadow: var(--shadow-sm);
-            transition: border-color var(--transition-fast);
+        @media (min-width: 992px) {
+            .contact-layout {
+                grid-template-columns: 1.1fr 0.9fr;
+            }
         }
-        .info-block:hover { border-left-color: var(--clr-accent); }
-        .info-block h4 {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--clr-text-muted);
-            margin-bottom: var(--space-2);
-        }
-        .info-block p, .info-block a {
-            font-size: 1rem;
-            color: var(--clr-text-main);
-            display: block;
-            line-height: 1.7;
-        }
-        .info-block a:hover { color: var(--clr-accent); }
-        .info-block .accent { color: var(--clr-accent); font-weight: 600; }
 
         /* Form */
-        .contact-form {
+        .contact-form-box {
             background: white;
             padding: var(--space-8);
             box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--clr-accent);
         }
-        .contact-form h2 { margin-bottom: var(--space-8); }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
-        @media(max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
-        .form-group { margin-bottom: var(--space-6); }
+
+        .contact-form-box h2 {
+            margin-bottom: var(--space-6);
+            font-size: 1.8rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4);
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group {
+            margin-bottom: var(--space-4);
+        }
+
         .form-group label {
             display: block;
-            font-size: 0.85rem;
-            font-weight: 500;
+            font-size: 0.82rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             color: var(--clr-text-muted);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
+
         .form-control {
             width: 100%;
-            padding: 0.9rem 1rem;
+            padding: 0.85rem 1rem;
             border: 1px solid var(--clr-border);
             background: var(--clr-background);
             font-family: var(--font-primary);
             font-size: 0.95rem;
             color: var(--clr-text-main);
-            transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+            transition: all var(--transition-fast);
         }
+
         .form-control:focus {
             outline: none;
             border-color: var(--clr-primary);
-            box-shadow: 0 0 0 3px rgba(21,101,192,0.1);
+            box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.12);
+            background: white;
         }
-        textarea.form-control { min-height: 150px; resize: vertical; }
-        select.form-control { cursor: pointer; }
+
+        textarea.form-control {
+            min-height: 130px;
+            resize: vertical;
+        }
+
         .btn-submit {
             width: 100%;
             background: var(--clr-accent);
@@ -97,196 +114,271 @@
             padding: 1rem;
             font-size: 1rem;
             font-weight: 600;
+            text-transform: uppercase;
             letter-spacing: 0.05em;
             border: none;
             cursor: pointer;
             transition: background var(--transition-fast);
+            margin-top: 0.5rem;
         }
-        .btn-submit:hover { background: var(--clr-accent-dark); }
 
-        .map-hint {
-            background: var(--clr-secondary);
-            color: white;
-            padding: var(--space-8);
-            margin-top: var(--space-4);
-            display: flex;
-            align-items: center;
-            gap: var(--space-4);
+        .btn-submit:hover {
+            background: var(--clr-accent-dark);
         }
-        .map-hint p { color: rgba(255,255,255,0.8); margin: 0; }
-        .map-hint a { color: var(--clr-accent-light); font-weight: 600; }
+
+        .network-map-box {
+            background: white;
+            padding: var(--space-6);
+            border: 1px solid var(--clr-border);
+            margin-top: var(--space-8);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .network-map-box img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            margin-top: 1rem;
+        }
     </style>
-  <script type="module" crossorigin src="/assets/main-BvjGSVkh.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-WeqiBIUd.css">
+  <script type="module" crossorigin src="/assets/main-jQLtxXZJ.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-DF-WcJVr.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="container navbar-inner">
-            <a href="/" class="navbar-brand">MISUS <span>REFRACTORY</span></a>
+            <a href="/" class="navbar-brand">
+                <div class="brand-text">
+                    <span class="brand-main">MISUS <strong>REFRACTORIES</strong></span>
+                    <span class="brand-sub">&amp; Allied Industries</span>
+                </div>
+            </a>
             <button class="mobile-toggle" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
             <div class="nav-links">
                 <a href="/" class="nav-link">Home</a>
                 <a href="/about.html" class="nav-link">About Us</a>
                 <a href="/products.html" class="nav-link">Products</a>
                 <a href="/contact.html" class="nav-link active">Contact</a>
+                <a href="/MRAI_Company_Brochure.pdf" download="MRAI_Company_Brochure.pdf" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem; border-color: var(--clr-accent); color: var(--clr-accent);">Brochure PDF</a>
             </div>
         </div>
     </nav>
 
     <header class="page-header">
         <div class="container">
-            <h1 class="reveal-up">Contact Us</h1>
-            <p class="reveal-up" style="max-width: 600px; margin: 1rem auto;">Ready to source premium refractories? Speak directly with our sales team.</p>
+            <h1 class="reveal-up">Contact &amp; Key Directory</h1>
+            <p class="reveal-up" style="max-width: 650px; margin: 1rem auto;">
+                Connect directly with our executive leadership, trade consultants, and marketing directors. We provide prompt technical consultations and tailored commercial proposals.
+            </p>
         </div>
     </header>
 
-    <section class="contact-section">
-        <div class="container">
-            <div class="contact-layout">
-
-                <!-- Left: Info Blocks -->
-                <div class="contact-info">
-                    <div class="info-block reveal-up">
-                        <h4>Registered Facility</h4>
-                        <p><strong>MISUS Refractories &amp; Allied Industries</strong></p>
-                        <p>Hat, Ashuria More, U-Jambedia</p>
-                        <p>Barjora, Bankura – 722202</p>
-                        <p>West Bengal, India</p>
-                    </div>
-
-                    <div class="info-block reveal-up">
-                        <h4>Phone (Office)</h4>
-                        <a href="tel:+9132412563000" class="accent">+91 3241 256300</a>
-                        <a href="tel:+9132412563980" class="accent">+91 3241 256398</a>
-                    </div>
-
-                    <div class="info-block reveal-up">
-                        <h4>Mobile</h4>
-                        <a href="tel:+919434216176" class="accent">+91 94342 16176</a>
-                        <a href="tel:+919332340870" class="accent">+91 93323 40870</a>
-                    </div>
-
-                    <div class="info-block reveal-up">
-                        <h4>Email Address</h4>
-                        <a href="mailto:misusbarjora@yahoo.com" class="accent">misusbarjora@yahoo.com</a>
-                    </div>
-
-                    <div class="info-block reveal-up">
-                        <h4>Business Details</h4>
-                        <p>Manufacturer &bull; Supplier &bull; Exporter</p>
-                        <p>Established: <strong>2009</strong></p>
-                        <p>GST: <strong>19AAWFM0044Q1ZI</strong></p>
-                    </div>
-
-                    <div class="map-hint reveal-up">
-                        <div>
-                            <p>Find us on Google Maps</p>
-                            <a href="https://www.google.co.in/maps/dir//23.38196940,87.24192990" target="_blank" rel="noopener">Open in Maps &rarr;</a>
-                        </div>
+    <section class="contact-section container" style="padding: 5.5rem 0;">
+        
+        <!-- Key Management Directory -->
+        <div>
+            <div class="section-header text-left">
+                <span class="eyebrow">Corporate Leadership</span>
+                <h2 class="section-title reveal-up">Direct Contact Directory</h2>
+            </div>
+            <div class="directory-grid reveal-grid">
+                
+                <!-- CEO -->
+                <div class="directory-card">
+                    <h4>Mr. Monojit Sengupta</h4>
+                    <div class="directory-role">Chief Executive Officer (CEO)</div>
+                    <div class="directory-contacts">
+                        <a href="tel:+919434216176">📞 +91 94342 16176</a>
+                        <a href="tel:+919332297691">📞 +91 93322 97691</a>
+                        <a href="mailto:misusbarjora@yahoo.com">✉️ misusbarjora@yahoo.com</a>
                     </div>
                 </div>
 
-                <!-- Right: Form -->
-                <div class="reveal-up">
-                    <form class="contact-form" onsubmit="handleSubmit(event)" id="contact-form">
-                        <h2 class="section-title">Send an Inquiry</h2>
+                <!-- Trade Consultant -->
+                <div class="directory-card">
+                    <h4>Mr. Sourav Sarkar</h4>
+                    <div class="directory-role">Business Consultant (Trade Inquiries)</div>
+                    <div class="directory-contacts">
+                        <a href="tel:+918879295876">📞 +91 88792 95876</a>
+                        <a href="mailto:souravivasarkar@rediffmail.com">✉️ souravivasarkar@rediffmail.com</a>
+                    </div>
+                </div>
+
+                <!-- Dy General Manager Marketing -->
+                <div class="directory-card">
+                    <h4>Mr. Prasanta Thakura</h4>
+                    <div class="directory-role">Dy General Manager (Marketing &amp; Application)</div>
+                    <div class="directory-contacts">
+                        <a href="tel:+919332340870">📞 +91 93323 40870</a>
+                        <a href="tel:+919547046762">📞 +91 95470 46762</a>
+                        <a href="mailto:pthakuradisha@gmail.com">✉️ pthakuradisha@gmail.com</a>
+                    </div>
+                </div>
+
+                <!-- Head HR -->
+                <div class="directory-card">
+                    <h4>Mr. Sukumar Biswas</h4>
+                    <div class="directory-role">Head – HR &amp; Administration</div>
+                    <div class="directory-contacts">
+                        <a href="tel:+918798229575">📞 +91 87982 29575</a>
+                        <a href="mailto:misusbarjora@yahoo.com">✉️ misusbarjora@yahoo.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plant Address & Form Grid -->
+        <div class="contact-layout" style="margin-top: var(--space-16);">
+            
+            <!-- Left Column: Plant & Banking Details -->
+            <div class="reveal-up">
+                <div class="section-header text-left">
+                    <span class="eyebrow">Registered Facility</span>
+                    <h2 class="section-title">Works &amp; Plant Location</h2>
+                </div>
+
+                <div style="background: white; padding: var(--space-6); border: 1px solid var(--clr-border); box-shadow: var(--shadow-sm); margin-bottom: var(--space-6);">
+                    <h4 style="font-size: 1.1rem; color: var(--clr-primary); margin-bottom: 0.5rem;">Misus Refractories &amp; Allied Industries</h4>
+                    <p style="color: var(--clr-text-main); margin-bottom: 0.75rem; line-height: 1.7;">
+                        Hat Ashuria More, Barjora, P.O. U-jambedia<br>
+                        Dist: Bankura, West Bengal – 722202, India
+                    </p>
+                    <p style="font-size: 0.9rem; color: var(--clr-text-muted); margin-bottom: 0.5rem;">
+                        <strong>Location Advantage:</strong> Situated on State Highway No. 9, located 9 KM south of Durgapur Railway Station (Eastern Railways). Accessible to major eastern ports at Kolkata and Haldia.
+                    </p>
+                    <p style="font-size: 0.9rem; color: var(--clr-text-muted); margin-bottom: 0;">
+                        <strong>Banker:</strong> State Bank of India, SME Branch, City Centre, Durgapur – 713216<br>
+                        <strong>GST Registration:</strong> 19AAWFM0044Q1ZI &bull; Founded: 2004
+                    </p>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://www.google.co.in/maps/dir//23.38196940,87.24192990" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; border-color: var(--clr-primary); color: var(--clr-primary);">
+                            📍 Open in Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Marketing Network across 9 States -->
+                <div class="network-map-box">
+                    <h4 style="color: var(--clr-secondary); font-size: 1.1rem; margin-bottom: 0.35rem;">Pan-India Client Presence</h4>
+                    <p style="font-size: 0.85rem; color: var(--clr-text-muted);">
+                        Serving primary steel plants and foundries across 9 States: West Bengal, Jharkhand, Chhattisgarh, Odisha, Goa, Andhra Pradesh, Karnataka, Maharashtra, and Gujarat.
+                    </p>
+                    <img src="/images/community/marketing_network.webp" alt="MRAI Marketing Network Map Across India" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Right Column: Inquiry Form -->
+            <div class="reveal-up">
+                <div class="contact-form-box">
+                    <h2>Send Technical Inquiry</h2>
+                    <p style="color: var(--clr-text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                        Fill out your operational parameters and requirements. Our engineering team will respond within 24 hours.
+                    </p>
+                    <form id="contact-form" onsubmit="event.preventDefault(); alert('Thank you for reaching out to Misus Refractories. Our team has received your technical inquiry and will contact you promptly.'); this.reset();">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Your Name *</label>
                                 <input type="text" id="name" class="form-control" required placeholder="Full Name">
                             </div>
                             <div class="form-group">
-                                <label for="company">Company / Organisation</label>
-                                <input type="text" id="company" class="form-control" placeholder="Your Company">
+                                <label for="company">Company / Plant Name *</label>
+                                <input type="text" id="company" class="form-control" required placeholder="e.g. Steel Plant / Foundry">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="email">Email Address *</label>
-                                <input type="email" id="email" class="form-control" required placeholder="email@company.com">
+                                <input type="email" id="email" class="form-control" required placeholder="name@company.com">
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" class="form-control" placeholder="+91 XXXXX XXXXX">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" class="form-control" required placeholder="+91 XXXXX XXXXX">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="product">Interested Product *</label>
+                            <label for="product">Product / Service of Interest *</label>
                             <select id="product" class="form-control" required>
-                                <option value="">— Select a Product —</option>
-                                <option>Castables (MR-Crete Range)</option>
-                                <option>Blast Furnace Ramming Mass</option>
-                                <option>Nozzle Filling Compound</option>
-                                <option>High Alumina Gunning</option>
-                                <option>Gunning Masses</option>
-                                <option>Ramming Masses</option>
-                                <option>Basic Monolithic</option>
-                                <option>Gunning Mass</option>
-                                <option>Trough Mass</option>
-                                <option>Mudgun Mass</option>
-                                <option>Blast Furnace Tap Hole Mass</option>
-                                <option>General Refractory Products</option>
-                                <option>Other / General Inquiry</option>
+                                <option value="">— Select Refractory Solution —</option>
+                                <option value="mudgun-mass">Blast Furnace Anhydrous Mudgun Mass / Tap Hole Mass</option>
+                                <option value="trough-mass">Blast Furnace Anhydrous Runner Mass / Trough Mass</option>
+                                <option value="ramming-mass">Basic Monolithic / Ramming Mass (MR-RAM)</option>
+                                <option value="castables">Conventional Castables (MR-Crete Range)</option>
+                                <option value="low-cement">Low Cement Castables (LC Series)</option>
+                                <option value="insulating">Insulating Castables</option>
+                                <option value="mortars">Fire Clay &amp; High Alumina Mortar</option>
+                                <option value="gunning-mass">High Alumina / Basic Gunning Mass</option>
+                                <option value="runner-services">24x7 Blast Furnace Runner Application Services</option>
+                                <option value="other">Custom Formulation / General Inquiry</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">Requirements / Message *</label>
-                            <textarea id="message" class="form-control" required placeholder="Please describe your requirements, quantities, operational conditions or any questions..."></textarea>
+                            <label for="message">Technical Requirements / Furnace Specifications *</label>
+                            <textarea id="message" class="form-control" required placeholder="Please provide furnace volume (m³), temperature range, estimated quantity (MT), or application parameters..."></textarea>
                         </div>
-                        <button type="submit" class="btn-submit" id="submit-btn">Send Inquiry</button>
+                        <button type="submit" class="btn-submit">Submit Inquiry</button>
                     </form>
                 </div>
             </div>
+
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col reveal-up">
-                    <a href="/" class="navbar-brand" style="color: white; margin-bottom: 1rem;">
-                        MISUS <span style="color:var(--clr-accent)">REFRACTORY</span>
+                <div class="footer-col reveal">
+                    <a href="/" class="navbar-brand" style="margin-bottom: 1rem;">
+                        <div class="brand-text">
+                            <span class="brand-main" style="color: white;">MISUS <strong style="color: var(--clr-accent-light);">REFRACTORIES</strong></span>
+                            <span class="brand-sub" style="color: rgba(255,255,255,0.7);">&amp; Allied Industries</span>
+                        </div>
                     </a>
-                    <p>Manufacturer, Supplier & Exporter of Castables, Blast Furnace Ramming Mass & Allied Refractory Products from Bankura, West Bengal, India.</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Est. 2009 &bull; GST: 19AAWFM0044Q1ZI</p>
+                    <p>Manufacturer of Castables, Blast Furnace Mudgun Mass &amp; Allied Refractory Products from Bankura, West Bengal, India.</p>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 0.5rem;">
+                        ISO 9001:2015 &amp; ISO 45001:2018 Certified &bull; GST: <strong>19AAWFM0044Q1ZI</strong>
+                    </p>
                 </div>
-                <div class="footer-col reveal-up">
+                <div class="footer-col reveal">
                     <h4>Quick Links</h4>
                     <a href="/">Home</a>
                     <a href="/about.html">About Us</a>
-                    <a href="/products.html">Products & Services</a>
-                    <a href="/contact.html">Contact Us</a>
+                    <a href="/products.html">Products &amp; Specifications</a>
+                    <a href="/contact.html">Contact Directory</a>
+                    <a href="/MRAI_Company_Brochure.pdf" download="MRAI_Company_Brochure.pdf">Download Brochure (PDF)</a>
                 </div>
-                <div class="footer-col reveal-up">
-                    <h4>Get In Touch</h4>
-                    <p>Hat, Ashuria More, U-Jambedia<br>Barjora, Bankura – 722202<br>West Bengal, India</p>
-                    <p><a href="tel:+919434216176" style="color:rgba(255,255,255,0.7)">+91 94342 16176</a></p>
-                    <p><a href="tel:+919332340870" style="color:rgba(255,255,255,0.7)">+91 93323 40870</a></p>
-                    <p><a href="mailto:misusbarjora@yahoo.com" style="color:rgba(255,255,255,0.7)">misusbarjora@yahoo.com</a></p>
+                <div class="footer-col reveal">
+                    <h4>Factory &amp; Works</h4>
+                    <p>Hat Ashuria More, Barjora<br>P.O. U-jambedia, Dist: Bankura<br>West Bengal – 722202, India</p>
+                    <p><a href="tel:+919434216176">+91 94342 16176</a> / <a href="tel:+919332297691">+91 93322 97691</a></p>
+                    <p><a href="mailto:misusbarjora@yahoo.com">misusbarjora@yahoo.com</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; <span id="year"></span> Misus Refractories And Allied Industries. All Rights Reserved.
+                &copy; <span id="year"></span> Misus Refractories &amp; Allied Industries (MRAI). All Rights Reserved.
             </div>
         </div>
     </footer>
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        function handleSubmit(e) {
-            e.preventDefault();
-            const btn = document.getElementById('submit-btn');
-            btn.textContent = '✓ Inquiry Sent Successfully!';
-            btn.style.background = '#2E7D32';
-            btn.disabled = true;
-            setTimeout(() => {
-                btn.textContent = 'Send Inquiry';
-                btn.style.background = '';
-                btn.disabled = false;
-                document.getElementById('contact-form').reset();
-            }, 4000);
+        
+        // Auto-select product from URL query param if present
+        const urlParams = new URLSearchParams(window.location.search);
+        const prodParam = urlParams.get('product');
+        if (prodParam) {
+            const selectEl = document.getElementById('product');
+            if (selectEl) {
+                for (let i = 0; i < selectEl.options.length; i++) {
+                    if (selectEl.options[i].value === prodParam) {
+                        selectEl.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
         }
     </script>
 </body>
+
 </html>

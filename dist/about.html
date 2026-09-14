@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Misus Refractories And Allied Industries</title>
-    <meta name="description" content="About MISUS Refractories & Allied Industries — manufacturer, supplier and exporter of high-quality refractory products since 2009, located in Barjora, Bankura, West Bengal.">
+    <title>About Us | Misus Refractories & Allied Industries (MRAI)</title>
+    <meta name="description"
+        content="Founded in 2004 by Late Manik Sengupta in Barjora, Bankura. Learn about our 2,400 MT/month plant, R&D testing labs, ISO 9001:2015 & ISO 45001:2018 certifications, and CSR initiatives.">
     <style>
         .page-header {
             padding: 150px 0 80px;
             background: linear-gradient(135deg, var(--clr-primary-dark) 0%, var(--clr-primary) 100%);
-            color: white; text-align: center; position: relative; overflow: hidden;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
+
         .page-header::after {
-            content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 60px;
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 60px;
             background: var(--clr-background);
             clip-path: ellipse(55% 100% at 50% 100%);
         }
-        .page-header h1 { color: white; }
-        .page-header p { color: rgba(255,255,255,0.8); }
 
         .factsheet-bar {
             background: white;
@@ -27,11 +36,19 @@
             position: relative;
             z-index: 10;
         }
+
         .factsheet-inner {
-            display: flex; flex-wrap: wrap; gap: var(--space-6);
-            justify-content: space-around; align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-6);
+            justify-content: space-around;
+            align-items: center;
         }
-        .fact-item { text-align: center; }
+
+        .fact-item {
+            text-align: center;
+        }
+
         .fact-item .fact-val {
             font-family: var(--font-display);
             font-size: 1.8rem;
@@ -40,6 +57,7 @@
             display: block;
             line-height: 1;
         }
+
         .fact-item .fact-label {
             font-size: 0.8rem;
             text-transform: uppercase;
@@ -47,281 +65,690 @@
             color: var(--clr-text-muted);
             margin-top: 4px;
         }
+
         .fact-divider {
-            width: 1px; height: 50px;
+            width: 1px;
+            height: 50px;
             background: var(--clr-border);
         }
 
-        .about-section { padding: var(--space-16) 0; background: var(--clr-background); }
+        /* CEO Desk Layout */
+        .ceo-section {
+            padding: var(--space-20) 0;
+            background: white;
+            border-bottom: 1px solid var(--clr-border);
+        }
 
-        .two-col-grid {
+        .ceo-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: var(--space-12);
-            align-items: start;
-        }
-        @media(min-width: 992px) { .two-col-grid { grid-template-columns: 1fr 1fr; } }
-
-        .about-image-box {
-            position: relative;
-            overflow: hidden;
-        }
-        .about-image-box img { width: 100%; height: 500px; object-fit: cover; display: block; }
-        .about-image-box::before {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            border: 4px solid var(--clr-accent);
-            transform: translate(16px, 16px);
-            z-index: -1;
-            pointer-events: none;
+            align-items: center;
         }
 
-        .pill-list { list-style: none; padding: 0; margin: var(--space-4) 0; }
-        .pill-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--clr-border);
+        @media (min-width: 992px) {
+            .ceo-grid {
+                grid-template-columns: 360px 1fr;
+            }
+        }
+
+        .ceo-card {
+            background: var(--clr-surface);
+            border: 1px solid var(--clr-border);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .ceo-card img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--clr-accent);
+            margin-bottom: 1rem;
+        }
+
+        .ceo-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .ceo-card p {
+            color: var(--clr-accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 0;
+        }
+
+        .ceo-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .ceo-content p {
             color: var(--clr-text-muted);
-            font-size: 0.95rem;
-            display: flex; align-items: center; gap: 0.75rem;
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+            font-size: 1.02rem;
         }
-        .pill-list li::before {
-            content: ''; display: inline-block;
-            width: 8px; height: 8px;
-            background: var(--clr-accent);
+
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-6);
+            margin-top: var(--space-6);
+        }
+
+        @media (max-width: 768px) {
+            .vision-mission-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .vm-box {
+            background: var(--clr-surface);
+            border-left: 3px solid var(--clr-primary);
+            padding: 1.25rem;
+        }
+
+        .vm-box h4 {
+            font-size: 1.1rem;
+            color: var(--clr-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .vm-box p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Testing Apparatus Grid */
+        .lab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-4);
+            margin-top: var(--space-8);
+        }
+
+        .lab-item {
+            background: white;
+            border: 1px solid var(--clr-border);
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all var(--transition-fast);
+        }
+
+        .lab-item:hover {
+            border-color: var(--clr-accent);
+            transform: translateX(4px);
+        }
+
+        .lab-num {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--clr-accent);
+            font-size: 1.2rem;
             flex-shrink: 0;
         }
 
-        .info-cards-grid {
+        .lab-text {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--clr-secondary);
+        }
+
+        /* Facility Gallery */
+        .facility-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-6);
-            margin-top: var(--space-12);
+            gap: 1.5rem;
+            margin-top: var(--space-10);
         }
-        .info-card {
+
+        .facility-card {
             background: white;
-            padding: var(--space-8);
-            border-top: 3px solid var(--clr-primary);
+            overflow: hidden;
+            border: 1px solid var(--clr-border);
             box-shadow: var(--shadow-sm);
-            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-        }
-        .info-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-        .info-card h3 { font-size: 1.2rem; margin-bottom: var(--space-4); color: var(--clr-primary); }
-
-        .gst-block {
-            background: var(--clr-primary);
-            color: white;
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            font-family: var(--font-display);
-            letter-spacing: 0.15em;
-            font-size: 1rem;
-            margin-top: var(--space-4);
+            transition: transform var(--transition-normal);
         }
 
-        .industries-strip {
-            background: var(--clr-secondary);
-            padding: var(--space-16) 0;
-            color: white;
+        .facility-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
         }
-        .industries-strip .section-title { color: white; }
-        .industries-grid {
-            display: flex; flex-wrap: wrap; gap: var(--space-4);
-            margin-top: var(--space-8);
+
+        .facility-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
         }
-        .industry-tag {
-            border: 1px solid rgba(255,255,255,0.15);
-            padding: var(--space-4) var(--space-6);
-            color: rgba(255,255,255,0.85);
-            font-size: 0.95rem;
-            transition: all var(--transition-fast);
+
+        .facility-card:hover img {
+            transform: scale(1.04);
         }
-        .industry-tag:hover {
-            border-color: var(--clr-accent);
-            background: rgba(230, 81, 0, 0.15);
-            color: white;
+
+        .facility-card-info {
+            padding: 1rem 1.25rem;
+        }
+
+        .facility-card-info h4 {
+            font-size: 1.05rem;
+            color: var(--clr-secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .facility-card-info p {
+            font-size: 0.85rem;
+            color: var(--clr-text-muted);
+            margin: 0;
         }
     </style>
-  <script type="module" crossorigin src="/assets/main-BvjGSVkh.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-WeqiBIUd.css">
+  <script type="module" crossorigin src="/assets/main-jQLtxXZJ.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-DF-WcJVr.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="container navbar-inner">
-            <a href="/" class="navbar-brand">MISUS <span>REFRACTORY</span></a>
+            <a href="/" class="navbar-brand">
+                <div class="brand-text">
+                    <span class="brand-main">MISUS <strong>REFRACTORIES</strong></span>
+                    <span class="brand-sub">&amp; Allied Industries</span>
+                </div>
+            </a>
             <button class="mobile-toggle" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
             <div class="nav-links">
                 <a href="/" class="nav-link">Home</a>
                 <a href="/about.html" class="nav-link active">About Us</a>
                 <a href="/products.html" class="nav-link">Products</a>
                 <a href="/contact.html" class="nav-link">Contact</a>
+                <a href="/MRAI_Company_Brochure.pdf" download="MRAI_Company_Brochure.pdf" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem; border-color: var(--clr-accent); color: var(--clr-accent);">Brochure PDF</a>
             </div>
         </div>
     </nav>
 
     <header class="page-header">
         <div class="container">
-            <h1 class="reveal-up">About Our Company</h1>
-            <p class="reveal-up" style="max-width: 640px; margin: 1rem auto;">Manufacturer, Supplier & Exporter of high-quality refractory products since 2009 — Barjora, Bankura, West Bengal, India.</p>
+            <h1 class="reveal-up">About Misus Refractories</h1>
+            <p class="reveal-up" style="max-width: 680px; margin: 1rem auto;">
+                A legacy of refractory excellence since 2004 — ISO 9001:2015 &amp; ISO 45001:2018 Certified manufacturer based in Barjora, Bankura, West Bengal.
+            </p>
         </div>
     </header>
 
-    <!-- Quick Facts Bar -->
+    <!-- Facts Bar -->
     <div class="factsheet-bar">
         <div class="container">
             <div class="factsheet-inner reveal-up">
                 <div class="fact-item">
-                    <span class="fact-val">2009</span>
-                    <span class="fact-label">Year of Establishment</span>
+                    <span class="fact-val">2004</span>
+                    <span class="fact-label">Year of Foundation</span>
                 </div>
                 <div class="fact-divider"></div>
                 <div class="fact-item">
-                    <span class="fact-val">14+</span>
-                    <span class="fact-label">Product Lines</span>
+                    <span class="fact-val">2,400 MT</span>
+                    <span class="fact-label">Monthly Plant Capacity</span>
                 </div>
                 <div class="fact-divider"></div>
                 <div class="fact-item">
-                    <span class="fact-val">3</span>
-                    <span class="fact-label">Business Roles</span>
+                    <span class="fact-val">9 States</span>
+                    <span class="fact-label">Pan-India Client Presence</span>
                 </div>
                 <div class="fact-divider"></div>
                 <div class="fact-item">
-                    <span class="fact-val">7+</span>
-                    <span class="fact-label">Industries Served</span>
+                    <span class="fact-val">20+</span>
+                    <span class="fact-label">Tier-1 Steel Clients</span>
+                </div>
+                <div class="fact-divider"></div>
+                <div class="fact-item">
+                    <span class="fact-val">24x7</span>
+                    <span class="fact-label">On-Site Runner Services</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- About Main -->
-    <section class="about-section">
+    <!-- From CEO's Desk -->
+    <section class="ceo-section">
         <div class="container">
-            <div class="two-col-grid">
-                <div class="about-image-box reveal-up">
-                    <img src="/assets/admin_building-ByxaKMmv.jpeg" alt="MISUS Refractories Facility">
+            <div class="ceo-grid">
+                <div class="ceo-card reveal-up">
+                    <img src="/images/office/ceo.webp" alt="Monojit Sengupta - CEO, Misus Refractories">
+                    <h3>Monojit Sengupta</h3>
+                    <p>Chief Executive Officer (CEO)</p>
                 </div>
-                <div class="reveal-up">
-                    <h2 class="section-title">Our Story</h2>
-                    <p style="margin-bottom: 1.5rem; color: var(--clr-text-muted); line-height: 1.8;">MISUS Refractories & Allied Industries is a manufacturer and supplier of high-quality refractory materials located in Barjora, Bankura, West Bengal. We specialize in producing refractory solutions used in high-temperature industrial operations such as steel manufacturing, blast furnaces, foundries, and other metallurgical processes.</p>
-                    <p style="margin-bottom: 1.5rem; color: var(--clr-text-muted); line-height: 1.8;">Since our establishment in 2009, the organization has focused on delivering reliable refractory materials that provide durability, thermal resistance, and consistent performance. Our commitment to quality manufacturing and long-term customer satisfaction drives every product we make.</p>
-                    <p style="color: var(--clr-text-muted); line-height: 1.8; margin-bottom: 1.5rem;">Our products are manufactured using carefully selected raw materials and controlled production processes to ensure stable chemical composition and reliable performance in demanding industrial environments.</p>
-                    <div>
-                        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--clr-text-muted); margin-bottom: 0.4rem;">GST Registration Number</p>
-                        <div class="gst-block">19AAWFM0044Q1ZI</div>
+                <div class="ceo-content reveal-up">
+                    <span class="eyebrow">Leadership Vision</span>
+                    <h2>From CEO's Desk</h2>
+                    <p>
+                        <em>"In the year 2004 this Refractory Industry (Misus Refractories &amp; Allied Industries) was founded by <strong>Late Manik Sengupta</strong> by his hands-on touch with a high progressive vision. MRAI steadily maintains its growth both in size and diversity to stand today in the radically changed economic and unprecedented competitive market of Refractory Monolithics."</em>
+                    </p>
+                    <p>
+                        The primary focus is to fulfill the special operational requirements of steel plants and specialized high-heat applications. We are committed to producing high-grade Mudgun mass through state-of-the-art facilities located at Barjora, Bankura. We expand technical capacity to deliver advanced integrated systems suitable for the latest modified Blast Furnaces in India.
+                    </p>
+                    
+                    <div class="vision-mission-grid">
+                        <div class="vm-box">
+                            <h4>Our Vision</h4>
+                            <p>To be a leading, competitive producer of top-quality castables and monolithics, maintaining corporate excellence, technology upgradation, and sustainable plant operation.</p>
+                        </div>
+                        <div class="vm-box">
+                            <h4>Our Mission</h4>
+                            <p>To strengthen growth by supplying benchmark quality products across global and domestic markets through business excellence and continuous technology modernization.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Info Cards: Why Us / Management / Infrastructure / QA -->
-    <section class="section" style="background: white; padding: var(--space-16) 0;">
+    <!-- Company Milestones (2004 - 2025) -->
+    <section class="milestones-section">
         <div class="container">
-            <h2 class="section-title reveal-up">What Sets Us Apart</h2>
-            <div class="info-cards-grid reveal-grid">
-                <div class="info-card">
-                    <h3>Why Choose Us</h3>
-                    <ul class="pill-list">
-                        <li>High-quality refractory materials</li>
-                        <li>Consistent product performance</li>
-                        <li>Experienced technical team</li>
-                        <li>Reliable delivery schedules</li>
-                        <li>Competitive pricing</li>
-                        <li>Customer-focused service</li>
-                    </ul>
+            <div class="section-header text-center">
+                <span class="eyebrow">Two Decades of Continuous Growth</span>
+                <h2 class="section-title reveal-up">Company Milestones</h2>
+            </div>
+            
+            <div class="timeline reveal-up">
+                <div class="timeline-item">
+                    <div class="timeline-year">2004</div>
+                    <div class="timeline-content">
+                        <h4>Foundation of MRAI</h4>
+                        <p>Established by Late Manik Sengupta in Barjora, Bankura with the vision to deliver high-quality monolithic refractories for steel, cement, glass, and metallurgical industries.</p>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <h3>Our Infrastructure</h3>
-                    <ul class="pill-list">
-                        <li>Raw material storage facilities</li>
-                        <li>Processing and mixing equipment</li>
-                        <li>Quality testing facilities</li>
-                        <li>Packaging and dispatch area</li>
-                        <li>Efficient logistics support</li>
-                    </ul>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2006</div>
+                    <div class="timeline-content">
+                        <h4>First Production Capacity Expansion</h4>
+                        <p>Enhancement of production volume by commissioning a brand-new high-torque Muller Mixer unit.</p>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <h3>Quality Assurance</h3>
-                    <ul class="pill-list">
-                        <li>Careful selection of raw materials</li>
-                        <li>Monitoring of production processes</li>
-                        <li>Chemical composition checks</li>
-                        <li>Strength and density testing</li>
-                        <li>Thermal resistance verification</li>
-                    </ul>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2012</div>
+                    <div class="timeline-content">
+                        <h4>Second Muller Mixer Addition</h4>
+                        <p>Expanded mixing and blending capacity to keep pace with escalating order volume across West Bengal and Jharkhand steel corridors.</p>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <h3>Management Focus</h3>
-                    <ul class="pill-list">
-                        <li>High manufacturing standards</li>
-                        <li>Strict quality control procedures</li>
-                        <li>Long-term customer relationships</li>
-                        <li>Improved product formulations</li>
-                        <li>Efficient supply chain operations</li>
-                    </ul>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-content">
+                        <h4>Automated Extrusion &amp; Improved Mixing</h4>
+                        <p>Installed improved design Muller Mixer and automatic extruder machine to achieve consistent clay compactness and density.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">
+                        <h4>Major Modernization: 2,400 MT / Month Capacity</h4>
+                        <p>
+                            Doubled capacity by adding 1,200 MT/month with upgraded Extruder machines (Ex-1 &amp; Ex-2 from AMCL Nagpur and Neptune Engg Ahmedabad) with heating arrangements, automatic shrink wrapping by Sealed Air Mumbai (100% recyclable CPCB compliant film), additional vertical tar tank, weighbridge, and complete administrative facility renovation.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Industries We Serve -->
-    <section class="industries-strip">
+    <!-- R&D and Quality Testing Infrastructure -->
+    <section class="section" style="background: var(--clr-surface); padding: 5.5rem 0;">
         <div class="container">
-            <h2 class="section-title reveal-up">Industries We Serve</h2>
-            <div class="industries-grid reveal-grid">
-                <div class="industry-tag">Steel Plants</div>
-                <div class="industry-tag">Iron & Foundry Industry</div>
-                <div class="industry-tag">Blast Furnace Operations</div>
-                <div class="industry-tag">Cement Industry</div>
-                <div class="industry-tag">Metal Processing Plants</div>
-                <div class="industry-tag">Thermal Processing Industries</div>
-                <div class="industry-tag">Industrial Furnace Operations</div>
+            <div class="section-header text-center">
+                <span class="eyebrow">Rigorous Process Control</span>
+                <h2 class="section-title reveal-up">R&amp;D &amp; Laboratory Testing Facilities</h2>
+                <p style="max-width: 700px; margin: 0 auto; color: var(--clr-text-muted);">
+                    Every batch of raw material and finished refractory undergoes strict physical and chemical testing to guarantee reliability under extreme thermal and mechanical wear.
+                </p>
+            </div>
+
+            <div class="lab-grid reveal-grid">
+                <div class="lab-item"><span class="lab-num">01</span><span class="lab-text">Chemical Testing for Incoming Raw Materials</span></div>
+                <div class="lab-item"><span class="lab-num">02</span><span class="lab-text">Distillation Apparatus for Coal Tar Testing</span></div>
+                <div class="lab-item"><span class="lab-num">03</span><span class="lab-text">Ring &amp; Ball Apparatus (Softening Point)</span></div>
+                <div class="lab-item"><span class="lab-num">04</span><span class="lab-text">Porosity Measurement Apparatus</span></div>
+                <div class="lab-item"><span class="lab-num">05</span><span class="lab-text">Mould Vibrator for Castables</span></div>
+                <div class="lab-item"><span class="lab-num">06</span><span class="lab-text">High Capacity Muffle Furnaces</span></div>
+                <div class="lab-item"><span class="lab-num">07</span><span class="lab-text">Sand Rammer for Workability Testing</span></div>
+                <div class="lab-item"><span class="lab-num">08</span><span class="lab-text">Cold Crushing Strength (C.C.S) Machine</span></div>
+            </div>
+
+            <div style="margin-top: var(--space-8); padding: 1.5rem; background: white; border-left: 4px solid var(--clr-primary);" class="reveal-up">
+                <h4 style="color: var(--clr-primary); margin-bottom: 0.5rem;">Mandatory Aging Period Verification</h4>
+                <p style="color: var(--clr-text-muted); margin: 0; line-height: 1.7;">
+                    MRAI maintains expansive storage facilities for finished goods at plant premises. Prior to dispatch, an exact aging period is computed and monitored to ensure the highest product stability and customer satisfaction.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Facility Photos -->
-    <section class="section" style="background: var(--clr-background); padding: var(--space-16) 0;">
+    <!-- Plant Infrastructure & Facility Gallery -->
+    <section class="section" id="infrastructure" style="background: white; padding: 5.5rem 0;">
         <div class="container">
-            <h2 class="section-title reveal-up">Our Facility</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); margin-top: var(--space-8);" class="reveal-grid">
-                <img src="/assets/gate-BtWvdGSX.jpeg" alt="Factory Gate" style="width:100%; height: 240px; object-fit: cover;">
-                <img src="/assets/machinery1-C_pIUt4G.jpeg" alt="Production Machinery" style="width:100%; height: 240px; object-fit: cover;">
-                <img src="/assets/machinery2-BZ0HX_H8.jpeg" alt="Industrial Equipment" style="width:100%; height: 240px; object-fit: cover;">
-                <img src="/assets/office_interior-CsnvvyAd.jpeg" alt="Office Interior" style="width:100%; height: 240px; object-fit: cover;">
+            <div class="section-header text-center">
+                <span class="eyebrow">Production Footprint</span>
+                <h2 class="section-title reveal-up">Plant Infrastructure &amp; Facilities</h2>
+            </div>
+
+            <div class="facility-gallery reveal-grid">
+                <div class="facility-card">
+                    <img src="/images/office/admin_building.webp" alt="MRAI Administrative Building" loading="lazy">
+                    <div class="facility-card-info">
+                        <h4>Administrative Headquarters</h4>
+                        <p>Barjora, Bankura – Renovated corporate &amp; engineering offices.</p>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <img src="/images/gates/gate1.webp" alt="Gate-1 Main Entrance" loading="lazy">
+                    <div class="facility-card-info">
+                        <h4>Gate-1 Main Factory Entrance</h4>
+                        <p>Main entrance at Hat Ashuria More on State Highway No. 9.</p>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <img src="/images/gates/gate2.webp" alt="Gate-2 Logistics & Dispatch" loading="lazy">
+                    <div class="facility-card-info">
+                        <h4>Gate-2 Dispatch &amp; Logistics</h4>
+                        <p>Dedicated commercial exit gate for trailer freight dispatch.</p>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <img src="/images/machinery/machinery2.webp" alt="Heavy Muller Mixers & Production Floor" loading="lazy">
+                    <div class="facility-card-info">
+                        <h4>Production &amp; Mixing Floor</h4>
+                        <p>High-torque Muller mixers supplied by Shreema Engg.</p>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <img src="/images/machinery/machinery3.webp" alt="Automatic Extrusion Line" loading="lazy">
+                    <div class="facility-card-info">
+                        <h4>Automated Extrusion Line</h4>
+                        <p>AMCL &amp; Neptune extruders with inline heating system.</p>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <img src="/images/office/weigh_bridge.webp" alt="Electronic Weigh Bridge" loading="lazy">
+                    <div class="facility-card-info">
+                        <h4>Electronic Weigh Bridge</h4>
+                        <p>Automated dispatch logistics &amp; fleet monitoring.</p>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <img src="/images/office/meeting_room.webp" alt="Technical Conference & Boardroom" loading="lazy">
+                    <div class="facility-card-info">
+                        <h4>Technical Conference Room</h4>
+                        <p>Client technical reviews &amp; quality consulting panels.</p>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <img src="/images/plant/plant1.webp" alt="Expanded Storage & Tar Tanks" loading="lazy">
+                    <div class="facility-card-info">
+                        <h4>Vertical Tar Tank &amp; Storage</h4>
+                        <p>High-capacity raw material and aging warehouses.</p>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <img src="/images/plant/plant5.webp" alt="Refractory Plant Facility Overview" loading="lazy">
+                    <div class="facility-card-info">
+                        <h4>Expanded Plant Facility</h4>
+                        <p>Modernized 2,400 MT/month monolithic manufacturing hub.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- CSR & Community Programs -->
+    <section class="csr-section" style="padding: 5.5rem 0;">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="eyebrow">Social Responsibility</span>
+                <h2 class="section-title reveal-up">Community Development Programs</h2>
+                <p style="max-width: 650px; margin: 0 auto; color: var(--clr-text-muted);">
+                    Giving back to the local community in Bankura is an intrinsic part of our corporate ethos.
+                </p>
+            </div>
+
+            <div class="csr-grid reveal-grid">
+                <div class="csr-card">
+                    <h3>Education: Tajpur High School</h3>
+                    <p>Constructed and equipped modern classrooms and a comprehensive student library at Tajpur High School to advance rural education.</p>
+                </div>
+                <div class="csr-card">
+                    <h3>Voluntary Blood Donation Camps</h3>
+                    <p>Regular on-site blood donation camps organized in partnership with Barjora Super Speciality Hospital, with enthusiastic employee participation.</p>
+                </div>
+                <div class="csr-card">
+                    <h3>Covid-19 Vaccination &amp; Healthcare</h3>
+                    <p>Organized community vaccination drives during Covid-19, coupled with Red Cross first-aid training and routine industrial safety drills.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: var(--space-8); text-align: center;" class="reveal-up">
+                <img src="/images/community/community_development_programs.webp" alt="Community Development Programs & Blood Donation" style="max-width: 750px; margin: 0 auto; border-radius: 4px; box-shadow: var(--shadow-md);" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Certifications Showcase (Individual 9 Testimonials) -->
+    <section class="section" style="background: white; padding: 5.5rem 0;">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="eyebrow">Accreditations &amp; Recognition</span>
+                <h2 class="section-title reveal-up">Certifications &amp; Accolades</h2>
+                <p style="max-width: 680px; margin: 0 auto; color: var(--clr-text-muted);">
+                    Verified credentials of excellence, quality compliance, and institutional trust awarded to Misus Refractories &amp; Allied Industries.
+                </p>
+            </div>
+
+            <div class="awards-grid reveal-grid">
+                <!-- 1. ISO 9001 -->
+                <div class="award-card">
+                    <div class="award-card-img">
+                        <img src="/images/testimonials/1.webp" alt="ISO 9001:2015 Certificate" loading="lazy">
+                    </div>
+                    <h4>ISO 9001:2015</h4>
+                    <p>Quality Management System Certification</p>
+                </div>
+
+                <!-- 2. ISO 45001 -->
+                <div class="award-card">
+                    <div class="award-card-img">
+                        <img src="/images/testimonials/2.webp" alt="ISO 45001:2018 Certificate" loading="lazy">
+                    </div>
+                    <h4>ISO 45001:2018</h4>
+                    <p>Occupational Health &amp; Safety Management</p>
+                </div>
+
+                <!-- 6. Welspun Award -->
+                <div class="award-card">
+                    <div class="award-card-img">
+                        <img src="/images/testimonials/6.webp" alt="Welspun Most Reliable Partner Award" loading="lazy">
+                    </div>
+                    <h4>Most Reliable Partner Award</h4>
+                    <p>Presented by Welspun Corp Ltd (April 18, 2024)</p>
+                </div>
+
+                <!-- 7. Paschimanchal Chamber -->
+                <div class="award-card">
+                    <div class="award-card-img">
+                        <img src="/images/testimonials/7.webp" alt="Paschimanchal Chamber of Industries Membership" loading="lazy">
+                    </div>
+                    <h4>Chamber of Industries</h4>
+                    <p>Certificate of Membership (Regd No. IV-190400005/2023)</p>
+                </div>
+
+                <!-- 8. State Blood Transfusion -->
+                <div class="award-card">
+                    <div class="award-card-img">
+                        <img src="/images/testimonials/8.webp" alt="State Blood Transfusion Council Certificate" loading="lazy">
+                    </div>
+                    <h4>Blood Transfusion Council</h4>
+                    <p>Certificate of Appreciation (Dept of Health &amp; FW, WB)</p>
+                </div>
+
+                <!-- 9. SBI MSME -->
+                <div class="award-card">
+                    <div class="award-card-img">
+                        <img src="/images/testimonials/9.webp" alt="State Bank of India MSME Connect Award" loading="lazy">
+                    </div>
+                    <h4>State Bank of India</h4>
+                    <p>MSME Connect Recognition &bull; SME City Centre Branch</p>
+                </div>
+
+                <!-- 4. ESIC Award -->
+                <div class="award-card">
+                    <div class="award-card-img">
+                        <img src="/images/testimonials/4.webp" alt="ESIC Durgapur Regional Office Award" loading="lazy">
+                    </div>
+                    <h4>ESIC Regional Recognition</h4>
+                    <p>Sub-Regional Office Durgapur Corporate Award</p>
+                </div>
+
+                <!-- 3. Trophy -->
+                <div class="award-card">
+                    <div class="award-card-img">
+                        <img src="/images/testimonials/3.webp" alt="Manufacturing Excellence Crystal Trophy" loading="lazy">
+                    </div>
+                    <h4>Excellence in Action Trophy</h4>
+                    <p>Awarded for Outstanding Refractory Supply Reliability</p>
+                </div>
+
+                <!-- 5. Memento Box -->
+                <div class="award-card">
+                    <div class="award-card-img">
+                        <img src="/images/testimonials/5.webp" alt="Industrial Leadership Memento" loading="lazy">
+                    </div>
+                    <h4>Industrial Partnership Memento</h4>
+                    <p>Honoring Outstanding Client Dedication</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dual-Page Navigable Brochure Slideshow Section -->
+    <section class="brochure-viewer-section" id="brochure-section">
+        <div class="container">
+            <div class="brochure-header reveal-up">
+                <span class="badge">Official Corporate Document</span>
+                <h2>Official Corporate Brochure</h2>
+                <p>Browse our 16-page official brochure with clickable two-page navigation, or download the full document in high-resolution PDF below.</p>
+            </div>
+
+            <!-- Pre-rendered Dual-Page Navigable Brochure Viewer -->
+            <div id="brochure-flipbook">
+                <div class="brochure-viewer-stage">
+                    <button class="brochure-nav-btn prev-btn" aria-label="Previous Page" disabled>&#10094;</button>
+                    <button class="brochure-nav-btn next-btn" aria-label="Next Page">&#10095;</button>
+
+                    <div class="brochure-spread-box">
+                        <div class="brochure-spread" id="brochure-flipbook-spread">
+                            <div class="brochure-page-card" id="brochure-flipbook-card-left" title="Page 1 (Click to go previous)">
+                                <img src="/images/brochure/page-1.webp" alt="Brochure Page 1" />
+                                <div class="brochure-page-tag">Page 1</div>
+                            </div>
+                            <div class="brochure-page-card" id="brochure-flipbook-card-right" title="Page 2 (Click to go next)">
+                                <img src="/images/brochure/page-2.webp" alt="Brochure Page 2" />
+                                <div class="brochure-page-tag">Page 2</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="brochure-toolbar">
+                        <div class="brochure-page-info" id="brochure-flipbook-page-info">
+                            Showing Pages <strong>1 &amp; 2</strong> of 16 &nbsp;(Spread 1 of 8)
+                        </div>
+
+                        <div class="brochure-actions">
+                            <button class="btn-icon" id="brochure-flipbook-first-btn" title="First Page">&#124;&#9664;</button>
+                            <button class="btn-icon" id="brochure-flipbook-last-btn" title="Last Page">&#9654;&#124;</button>
+                            <a href="/MRAI_Company_Brochure.pdf" download="MRAI_Company_Brochure.pdf" class="btn-download" target="_blank">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                Download PDF Brochure (8.7 MB)
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="brochure-dots" id="brochure-flipbook-dots">
+                        <button class="brochure-dot active" data-spread="0" title="Pages 1 & 2"></button>
+                        <button class="brochure-dot" data-spread="1" title="Pages 3 & 4"></button>
+                        <button class="brochure-dot" data-spread="2" title="Pages 5 & 6"></button>
+                        <button class="brochure-dot" data-spread="3" title="Pages 7 & 8"></button>
+                        <button class="brochure-dot" data-spread="4" title="Pages 9 & 10"></button>
+                        <button class="brochure-dot" data-spread="5" title="Pages 11 & 12"></button>
+                        <button class="brochure-dot" data-spread="6" title="Pages 13 & 14"></button>
+                        <button class="brochure-dot" data-spread="7" title="Pages 15 & 16"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col reveal-up">
-                    <a href="/" class="navbar-brand" style="color: white; margin-bottom: 1rem;">
-                        MISUS <span style="color:var(--clr-accent)">REFRACTORY</span>
+                <div class="footer-col reveal">
+                    <a href="/" class="navbar-brand" style="margin-bottom: 1rem;">
+                        <div class="brand-text">
+                            <span class="brand-main" style="color: white;">MISUS <strong style="color: var(--clr-accent-light);">REFRACTORIES</strong></span>
+                            <span class="brand-sub" style="color: rgba(255,255,255,0.7);">&amp; Allied Industries</span>
+                        </div>
                     </a>
-                    <p>Manufacturer, Supplier & Exporter of Castables, Blast Furnace Ramming Mass & Allied Refractory Products from Bankura, West Bengal, India.</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Est. 2009 &bull; GST: 19AAWFM0044Q1ZI</p>
+                    <p>Manufacturer of Castables, Blast Furnace Mudgun Mass &amp; Allied Refractory Products from Bankura, West Bengal, India.</p>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 0.5rem;">
+                        ISO 9001:2015 &amp; ISO 45001:2018 Certified &bull; GST: <strong>19AAWFM0044Q1ZI</strong>
+                    </p>
                 </div>
-                <div class="footer-col reveal-up">
+                <div class="footer-col reveal">
                     <h4>Quick Links</h4>
                     <a href="/">Home</a>
                     <a href="/about.html">About Us</a>
-                    <a href="/products.html">Products & Services</a>
-                    <a href="/contact.html">Contact Us</a>
+                    <a href="/products.html">Products &amp; Specifications</a>
+                    <a href="/contact.html">Contact Directory</a>
+                    <a href="/MRAI_Company_Brochure.pdf" download="MRAI_Company_Brochure.pdf">Download Brochure (PDF)</a>
                 </div>
-                <div class="footer-col reveal-up">
-                    <h4>Get In Touch</h4>
-                    <p>Hat, Ashuria More, U-Jambedia<br>Barjora, Bankura – 722202<br>West Bengal, India</p>
-                    <p><a href="tel:+919434216176" style="color:rgba(255,255,255,0.7)">+91 94342 16176</a></p>
-                    <p><a href="mailto:misusbarjora@yahoo.com" style="color:rgba(255,255,255,0.7)">misusbarjora@yahoo.com</a></p>
+                <div class="footer-col reveal">
+                    <h4>Factory &amp; Works</h4>
+                    <p>Hat Ashuria More, Barjora<br>P.O. U-jambedia, Dist: Bankura<br>West Bengal – 722202, India</p>
+                    <p><a href="tel:+919434216176">+91 94342 16176</a> / <a href="tel:+919332297691">+91 93322 97691</a></p>
+                    <p><a href="mailto:misusbarjora@yahoo.com">misusbarjora@yahoo.com</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; <span id="year"></span> Misus Refractories And Allied Industries. All Rights Reserved.
+                &copy; <span id="year"></span> Misus Refractories &amp; Allied Industries (MRAI). All Rights Reserved.
             </div>
         </div>
     </footer>
 
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
+
 </html>

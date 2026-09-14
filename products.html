@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products & Services | Misus Refractories</title>
+    <title>Products & Technical Specifications | Misus Refractories (MRAI)</title>
     <meta name="description"
-        content="Full product catalogue of Misus Refractories: Castables, Blast Furnace Ramming Mass, Nozzle Filling Compound, High Alumina Gunning, Gunning Masses, Ramming Masses, Basic Monolithic and more.">
+        content="Complete engineering specifications for Mudgun Mass, Trough Mass, MR-Crete Conventional & Low Cement Castables, Basic Ramming Masses, and High Alumina Mortars.">
     <link rel="stylesheet" href="/styles/main.css">
     <style>
         .page-header {
@@ -29,17 +29,41 @@
             clip-path: ellipse(55% 100% at 50% 100%);
         }
 
-        .page-header h1 {
+        .product-nav-strip {
+            background: white;
+            box-shadow: var(--shadow-sm);
+            padding: 0.75rem 0;
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            border-bottom: 1px solid var(--clr-border);
+        }
+
+        .product-nav-inner {
+            display: flex;
+            gap: 0.75rem;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 0.25rem 0;
+        }
+
+        .product-nav-link {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--clr-secondary);
+            padding: 0.4rem 0.85rem;
+            border-radius: 4px;
+            background: var(--clr-background);
+            transition: all var(--transition-fast);
+        }
+
+        .product-nav-link:hover {
+            background: var(--clr-accent);
             color: white;
         }
 
-        .page-header p {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
         .product-list {
-            padding: var(--space-16) 0;
-            background: var(--clr-background);
+            padding: var(--space-12) 0 var(--space-20);
         }
 
         .product-card-horizontal {
@@ -47,41 +71,45 @@
             flex-direction: column;
             background: white;
             overflow: hidden;
-            margin-bottom: var(--space-8);
+            margin-bottom: var(--space-10);
             box-shadow: var(--shadow-sm);
-            border-left: 4px solid transparent;
-            transition: border-color var(--transition-fast), box-shadow var(--transition-normal), transform var(--transition-normal);
+            border-left: 4px solid var(--clr-primary);
+            transition: all var(--transition-normal);
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
             .product-card-horizontal {
                 flex-direction: row;
-                min-height: 320px;
             }
         }
 
         .product-card-horizontal:hover {
             border-left-color: var(--clr-accent);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
         }
 
         .product-img {
-            flex: 0 0 40%;
+            flex: 0 0 380px;
             position: relative;
-            overflow: hidden;
-            min-height: 220px;
+            background: #f4f6f8;
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
         }
 
         .product-img img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            max-height: 320px;
+            object-fit: contain;
             transition: transform var(--transition-slow);
         }
 
         .product-card-horizontal:hover .product-img img {
-            transform: scale(1.05);
+            transform: scale(1.04);
         }
 
         .product-badge {
@@ -106,57 +134,36 @@
         }
 
         .product-info h3 {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             color: var(--clr-secondary);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
         }
 
         .product-info p {
             color: var(--clr-text-muted);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             line-height: 1.7;
+            font-size: 0.98rem;
         }
 
-        .product-specs {
-            background: var(--clr-background);
-            border: 1px solid var(--clr-border);
-            padding: 1rem;
-            margin-bottom: 1.5rem;
+        .btn-quote {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--clr-accent);
+            color: white;
+            padding: 0.65rem 1.5rem;
             font-size: 0.9rem;
-        }
-
-        .product-specs table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .product-specs th {
-            background: var(--clr-primary);
-            color: white;
-            padding: 0.5rem 0.8rem;
-            text-align: left;
-            font-size: 0.8rem;
             font-weight: 600;
+            text-transform: uppercase;
             letter-spacing: 0.05em;
+            align-self: flex-start;
+            margin-top: 0.5rem;
+            transition: background var(--transition-fast);
         }
 
-        .product-specs td {
-            padding: 0.5rem 0.8rem;
-            border-bottom: 1px solid var(--clr-border);
-            color: var(--clr-text-main);
-        }
-
-        .product-specs tr:last-child td {
-            border-bottom: none;
-        }
-
-        .btn-accent {
-            background-color: var(--clr-accent);
-            color: white;
-        }
-
-        .btn-accent:hover {
-            background-color: var(--clr-accent-dark);
+        .btn-quote:hover {
+            background: var(--clr-accent-dark);
             color: white;
         }
     </style>
@@ -165,338 +172,569 @@
 <body>
     <nav class="navbar">
         <div class="container navbar-inner">
-            <a href="/" class="navbar-brand">MISUS <span>REFRACTORY</span></a>
+            <a href="/" class="navbar-brand">
+                <div class="brand-text">
+                    <span class="brand-main">MISUS <strong>REFRACTORIES</strong></span>
+                    <span class="brand-sub">&amp; Allied Industries</span>
+                </div>
+            </a>
             <button class="mobile-toggle" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
             <div class="nav-links">
                 <a href="/" class="nav-link">Home</a>
                 <a href="/about.html" class="nav-link">About Us</a>
                 <a href="/products.html" class="nav-link active">Products</a>
                 <a href="/contact.html" class="nav-link">Contact</a>
+                <a href="/MRAI_Company_Brochure.pdf" download="MRAI_Company_Brochure.pdf" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem; border-color: var(--clr-accent); color: var(--clr-accent);">Brochure PDF</a>
             </div>
         </div>
     </nav>
 
     <header class="page-header">
         <div class="container">
-            <h1 class="reveal-up">Products & Services</h1>
-            <p class="reveal-up" style="max-width: 640px; margin: 1rem auto;">Engineered for maximum thermal efficiency
-                and structural integrity. Browse our complete range of refractory manufacturing solutions.</p>
+            <h1 class="reveal-up">Products &amp; Technical Specifications</h1>
+            <p class="reveal-up" style="max-width: 720px; margin: 1rem auto;">
+                Engineered for maximum thermal shock resistance, abrasion tolerance, and chemical inertness. Complete metallurgical and physical properties as verified by our in-house R&amp;D laboratories.
+            </p>
         </div>
     </header>
 
+    <!-- Sticky Navigation Sub-Bar -->
+    <div class="product-nav-strip">
+        <div class="container product-nav-inner">
+            <a href="#mudgun-mass" class="product-nav-link">Mudgun Mass</a>
+            <a href="#trough-mass" class="product-nav-link">Trough Mass</a>
+            <a href="#ramming-masses" class="product-nav-link">Basic Ramming Mass</a>
+            <a href="#castables" class="product-nav-link">Conventional Castables</a>
+            <a href="#low-cement" class="product-nav-link">Low Cement Castables</a>
+            <a href="#insulating" class="product-nav-link">Insulating Castables</a>
+            <a href="#mortars" class="product-nav-link">Mortars</a>
+            <a href="#gunning-mass" class="product-nav-link">Gunning Mass</a>
+        </div>
+    </div>
+
     <section class="product-list container">
 
-        <!-- 1. Castables -->
-        <div class="product-card-horizontal reveal-up" id="castables">
+        <!-- 1. Mudgun Mass / Taphole Mass -->
+        <div class="product-card-horizontal reveal-up" id="mudgun-mass">
             <div class="product-img">
-                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
-                    alt="Castables">
-                <span class="product-badge">Flagship Product</span>
+                <img src="/images/products/mudgun_mass1.webp" alt="Blast Furnace Mudgun Mass">
+                <span class="product-badge">Speciality Monolithic</span>
             </div>
             <div class="product-info">
-                <h3>Castables</h3>
-                <p>The <strong>MR-Crete range</strong> of conventional castables are generally usable for moderate and
-                    high heat applications. These are Calcium Aluminate bonded refractories for applications up to
-                    <strong>1400°C</strong>. High Alumina conventional castables are made with alumina aggregate and
-                    high alumina refractory cement, suitable up to <strong>1700°C</strong>. Low Cement Castables are
-                    available from 45% to 90% Al₂O₃ content, suitable up to <strong>1800°C</strong>, with low porosity,
-                    better corrosion and erosion resistance, and good thermal shock resistance. Wide range of insulating
-                    castables available for both hot face and backup refractory lining.</p>
-                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
+                <h3>Blast Furnace Anhydrous Tap Hole / Mudgun Mass</h3>
+                <p>
+                    Specialized anhydrous tap hole clay developed for blast furnaces of various volume capacities. Formulated with resin or tar-resin binders for controlled plasticity during mudgun injection and rapid strength development to resist iron-slag erosion and ensure clean, predictable drilling.
+                </p>
+                <div class="specs-table-wrapper">
+                    <table class="specs-table">
+                        <thead>
+                            <tr>
+                                <th>Grade / Type</th>
+                                <th>Al₂O₃ (%)</th>
+                                <th>SiC + C (%)</th>
+                                <th>Resin (%)</th>
+                                <th>Grain Size</th>
+                                <th>B.D (110°C/24h)</th>
+                                <th>CCS (900°C/2h)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tap Hole Mass (Resin)</strong></td>
+                                <td>46%</td>
+                                <td>28%</td>
+                                <td>6%</td>
+                                <td>0–3 mm</td>
+                                <td>2.2 g/cm³</td>
+                                <td>60 kgf/cm²</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tap Hole Mass (Tar &amp; Resin)</strong></td>
+                                <td>40–44%</td>
+                                <td>26%</td>
+                                <td>2%</td>
+                                <td>0–3 mm</td>
+                                <td>2.0 g/cm³</td>
+                                <td>60 kgf/cm²</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="/contact.html?product=mudgun-mass" class="btn-quote">Request Mudgun Quote</a>
             </div>
         </div>
 
-        <!-- 2. Blast Furnace Ramming Mass -->
-        <div class="product-card-horizontal reveal-up" id="ramming-mass">
+        <!-- 2. Trough Mass / Runner Mass -->
+        <div class="product-card-horizontal reveal-up" id="trough-mass">
             <div class="product-img">
-                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80"
-                    alt="Blast Furnace Ramming Mass">
+                <img src="/images/products/trough_mass.webp" alt="Blast Furnace Trough Mass">
+                <span class="product-badge">Heavy Duty</span>
             </div>
             <div class="product-info">
-                <h3>Blast Furnace Ramming Mass</h3>
-                <p>Premium ramming mass designed specifically for blast furnace runners and hearths. Formulated for
-                    excellent resistance to corrosion from molten iron and slag, ensuring extended campaign life.
-                    Provides outstanding mechanical strength and thermal stability at elevated temperatures common in
-                    iron-making operations.</p>
-                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
+                <h3>Blast Furnace Anhydrous Runner / Trough Mass</h3>
+                <p>
+                    Available in Resin &amp; Tar Bonded as well as Special Resin Bonded grades, formulated for blast furnace troughs from 40 m³ to 4,000 m³ capacity across India. Exhibits excellent hot metal and slag erosion resistance with smooth release and long campaign life.
+                </p>
+                <div class="specs-table-wrapper">
+                    <table class="specs-table">
+                        <thead>
+                            <tr>
+                                <th>Grade / Type</th>
+                                <th>Al₂O₃ (%)</th>
+                                <th>SiC + C (%)</th>
+                                <th>Grain Size</th>
+                                <th>B.D (110°C/24h)</th>
+                                <th>CCS (110°C/24h)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Anhydrous Trough Mass (Resin+Tar)</strong></td>
+                                <td>58–62%</td>
+                                <td>20–24%</td>
+                                <td>0–5 mm</td>
+                                <td>2.2–2.4 g/cm³</td>
+                                <td>160 kgf/cm²</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anhydrous Trough Mass (Spcl. Resin)</strong></td>
+                                <td>62–66%</td>
+                                <td>≥ 20% (SiC)</td>
+                                <td>0–5 mm</td>
+                                <td>2.4–2.8 g/cm³</td>
+                                <td>200 kgf/cm²</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="/contact.html?product=trough-mass" class="btn-quote">Request Trough Mass Quote</a>
             </div>
         </div>
 
-        <!-- 3. Nozzle Filling Compound -->
-        <div class="product-card-horizontal reveal-up" id="nozzle-filling">
-            <div class="product-img">
-                <img src="https://images.unsplash.com/photo-1629910006734-eab798ebce09?auto=format&fit=crop&w=800&q=80"
-                    alt="Nozzle Filling Compound">
-            </div>
-            <div class="product-info">
-                <h3>NozCEOling Compound</h3>
-                <p>Specially developed free-flowing compound used for filling slide gate nozzles in steel ladles.
-                    Guarantees high free-opening rates and effectively prevents steel penetration into the nozzle
-                    assembly. Formulated for consistent flow characteristics and excellent sintering behavior under
-                    service conditions to ensure safe steel-casting operations.</p>
-                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
-            </div>
-        </div>
-
-        <!-- 4. High Alumina Gunning -->
-        <div class="product-card-horizontal reveal-up" id="high-alumina-gunning">
-            <div class="product-img">
-                <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80"
-                    alt="High Alumina Gunning">
-            </div>
-            <div class="product-info">
-                <h3>High Alumina Gunning</h3>
-                <p>Designed for hot and cold gunning repair of various industrial furnaces and ladles. Features
-                    excellent adhesion to the substrate, negligible rebound loss during application, and sets rapidly to
-                    form a dense, strong monolithic structure. Ideal for maintaining and extending the life of existing
-                    refractory linings.</p>
-                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
-            </div>
-        </div>
-
-        <!-- 5. Gunning Masses -->
-        <div class="product-card-horizontal reveal-up" id="gunning-masses">
-            <div class="product-img">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
-                    alt="Gunning Masses">
-            </div>
-            <div class="product-info">
-                <h3>Gunning Masses</h3>
-                <p>Versatile refractory gunning masses suitable for a broad range of furnace maintenance applications.
-                    Available in various compositions to address specific wear conditions, including silica,
-                    alumina-silica, and high-alumina grades. Applied using conventional gunning equipment for rapid,
-                    cost-effective furnace repair.</p>
-                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
-            </div>
-        </div>
-
-        <!-- 6. Ramming Masses -->
+        <!-- 3. Basic Monolithics & Ramming Masses -->
         <div class="product-card-horizontal reveal-up" id="ramming-masses">
             <div class="product-img">
-                <img src="https://images.unsplash.com/photo-1562408590-e32931084e23?auto=format&fit=crop&w=800&q=80"
-                    alt="Ramming Masses">
+                <img src="/images/products/mr_ram_20S1.webp" alt="Basic Ramming Mass MR-RAM">
+                <span class="product-badge">High MgO</span>
             </div>
             <div class="product-info">
-                <h3>Ramming Masses</h3>
-                <p>High-quality ramming masses for induction furnace lining, coreless and channel type, available in
-                    acidic, neutral, and basic grades. Engineered for excellent sintering behavior and outstanding
-                    resistance to molten metal attack, ensuring long service life and dimensional stability.</p>
-                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
+                <h3>Basic Monolithics &amp; Ramming Masses (MR-RAM)</h3>
+                <p>
+                    High-magnesia refractory masses engineered for electric arc furnaces (EAF), cold and hot steel launders, induction furnaces, and burner blocks. Formulated with high MgO content (80%–86%) for supreme resistance against basic metallurgical slag.
+                </p>
+                <div class="specs-table-wrapper">
+                    <table class="specs-table">
+                        <thead>
+                            <tr>
+                                <th>Product Code</th>
+                                <th>MgO (%)</th>
+                                <th>SiO₂ (%)</th>
+                                <th>Grading (mm)</th>
+                                <th>Sintering Temp (°C)</th>
+                                <th>Application Temp (°C)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>MR RAM-85</strong></td>
+                                <td>85.00%</td>
+                                <td>6.0%</td>
+                                <td>0–5 mm</td>
+                                <td>1550°C</td>
+                                <td>1700°C</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MR RAM-86</strong></td>
+                                <td>86.00%</td>
+                                <td>6.0%</td>
+                                <td>0–5 mm</td>
+                                <td>1550°C</td>
+                                <td>1700°C</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MR RAM-80</strong></td>
+                                <td>80.00%</td>
+                                <td>7.0%</td>
+                                <td>0–3 mm</td>
+                                <td>1500°C</td>
+                                <td>1700°C</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MR GUN 80</strong></td>
+                                <td>80.00%</td>
+                                <td>7.0%</td>
+                                <td>0–3 mm</td>
+                                <td>1500°C</td>
+                                <td>1700°C</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="/contact.html?product=ramming-mass" class="btn-quote">Request Ramming Mass Quote</a>
             </div>
         </div>
 
-        <!-- 7. Basic Monolithic -->
-        <div class="product-card-horizontal reveal-up" id="basic-monolithic">
+        <!-- 4. Conventional Castables (MR-Crete Range) -->
+        <div class="product-card-horizontal reveal-up" id="castables">
             <div class="product-img">
-                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
-                    alt="Basic Monolithic">
-                <span class="product-badge">Specs Available</span>
+                <img src="/images/products/cfm_309.webp" alt="MR-Crete Conventional Castables">
+                <span class="product-badge">Flagship</span>
             </div>
             <div class="product-info">
-                <h3>Basic Monolithic</h3>
-                <p>Complete range of basic monolithic refractories for BOF and EAF applications. Supplied as ramming and
-                    gunning masses for maintenance and repair of basic-lined vessels. Formulated with high MgO content
-                    for superior resistance to basic slag at extreme temperatures.</p>
-                <div class="product-specs">
-                    <table>
+                <h3>Conventional Castables (MR-Crete Range)</h3>
+                <p>
+                    Calcium Aluminate bonded refractories for applications up to 1400°C, and High Alumina grades bonded with premium refractory cement for service up to 1750°C. Delivers outstanding mechanical strength and volume stability across heating cycles.
+                </p>
+                <div class="specs-table-wrapper">
+                    <table class="specs-table">
                         <thead>
                             <tr>
                                 <th>Product</th>
-                                <th>MgO%</th>
-                                <th>SiO₂%</th>
-                                <th>Grading (mm)</th>
-                                <th>Sintering (°C)</th>
-                                <th>Application (°C)</th>
+                                <th>Max Temp (°C)</th>
+                                <th>Water Add. (%)</th>
+                                <th>Dry Density (g/cm³)</th>
+                                <th>CCS (kgf/cm²)</th>
+                                <th>Al₂O₃ (%)</th>
+                                <th>Fe₂O₃ (%)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>MR RAM-85</td>
-                                <td>85.00</td>
-                                <td>6.0</td>
-                                <td>0–5</td>
-                                <td>1550</td>
-                                <td>1700</td>
+                                <td><strong>MRCRETE NORMAL</strong></td>
+                                <td>1400°C</td>
+                                <td>11–12%</td>
+                                <td>2.10</td>
+                                <td>110°C: 250 / 900°C: 200 / 1300°C: 270</td>
+                                <td>45.0%</td>
+                                <td>4.0%</td>
                             </tr>
                             <tr>
-                                <td>MR RAM-86</td>
-                                <td>86.00</td>
-                                <td>6.0</td>
-                                <td>0–5</td>
-                                <td>1550</td>
-                                <td>1700</td>
+                                <td><strong>MRCRETE SUPER</strong></td>
+                                <td>1450°C</td>
+                                <td>11–12%</td>
+                                <td>2.45</td>
+                                <td>110°C: 350 / 900°C: 300 / 1400°C: 400</td>
+                                <td>66.0%</td>
+                                <td>5.0%</td>
                             </tr>
                             <tr>
-                                <td>MR GUN-80</td>
-                                <td>80.00</td>
-                                <td>7.0</td>
-                                <td>0–3</td>
-                                <td>1500</td>
-                                <td>1700</td>
+                                <td><strong>MRC HEAT C</strong></td>
+                                <td>1500°C</td>
+                                <td>10–12%</td>
+                                <td>2.10</td>
+                                <td>110°C: 350 / 900°C: 280 / 1300°C: 480</td>
+                                <td>50.0%</td>
+                                <td>1.5%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MRC HEAT K</strong></td>
+                                <td>1600°C</td>
+                                <td>10–11%</td>
+                                <td>2.20</td>
+                                <td>110°C: 350 / 900°C: 290 / 1450°C: 510</td>
+                                <td>60.0%</td>
+                                <td>1.0%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MRC HEAT K(SPL)</strong></td>
+                                <td>1600°C</td>
+                                <td>10–11%</td>
+                                <td>2.10</td>
+                                <td>110°C: 450 / 900°C: 300 / 1450°C: 550</td>
+                                <td>62.0%</td>
+                                <td>1.0%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MRC HEAT A</strong></td>
+                                <td>1750°C</td>
+                                <td>9–10%</td>
+                                <td>2.80</td>
+                                <td>110°C: 600 / 900°C: 420 / 1450°C: 630</td>
+                                <td>86.0%</td>
+                                <td>0.8%</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
+                <a href="/contact.html?product=castables" class="btn-quote">Request Castable Quote</a>
             </div>
         </div>
 
-        <!-- 8. Blast Furnace Tap Hole Mass -->
-        <div class="product-card-horizontal reveal-up" id="tap-hole-mass">
-            <div class="product-img">
-                <img src="https://images.unsplash.com/photo-1429514538650-f9fb543e1b07?auto=format&fit=crop&w=800&q=80"
-                    alt="Blast Furnace Tap Hole Mass">
+        <!-- 5. Low Cement Castables (LCC) -->
+        <div class="product-card-fullwidth reveal-up" id="low-cement">
+            <div class="product-header-inline">
+                <h3>Low Cement Castables (LC Series)</h3>
+                <span class="product-badge" style="position: static;">Up to 1800°C</span>
             </div>
-            <div class="product-info">
-                <h3>Blast Furnace Tap Hole Mass</h3>
-                <p>Specially formulated tap hole clay for sealing blast furnace tap holes after each cast. Engineered
-                    for consistent plug formation, excellent penetration resistance against hot metal and slag, and
-                    reliable drilling characteristics for the next cast. Properties are tailored for different furnace
-                    sizes and operational conditions.</p>
-                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
+            <p>
+                High-purity alumina castables with deflocculants ensuring ultra-low water demand, minimal porosity, and exceptional resistance to hot slag corrosion, metal penetration, and thermal fatigue up to 1800°C.
+            </p>
+            <div class="specs-table-wrapper">
+                <table class="specs-table">
+                    <thead>
+                        <tr>
+                            <th>Product Code</th>
+                            <th>Max Temp (°C)</th>
+                            <th>Water Add. (%)</th>
+                            <th>Dry Density (g/cm³)</th>
+                            <th>CCS (kgf/cm²)</th>
+                            <th>Al₂O₃ (%)</th>
+                            <th>Fe₂O₃ (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>LC 45</strong></td>
+                            <td>1550°C</td>
+                            <td>5.0–6.0%</td>
+                            <td>2.30</td>
+                            <td>110°C: 700 / 900°C: 800 / 1100°C: 900</td>
+                            <td>45.0%</td>
+                            <td>1.0%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>LC 60</strong></td>
+                            <td>1600°C</td>
+                            <td>5.0–5.5%</td>
+                            <td>2.50</td>
+                            <td>110°C: 750 / 900°C: 810 / 1100°C: 900</td>
+                            <td>60.0%</td>
+                            <td>1.0%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>LC 80</strong></td>
+                            <td>1700°C</td>
+                            <td>4.0–5.0%</td>
+                            <td>2.85</td>
+                            <td>110°C: 800 / 900°C: 900 / 1300°C: 1000</td>
+                            <td>80.0%</td>
+                            <td>1.0%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>LC 90</strong></td>
+                            <td>1700°C</td>
+                            <td>4.0–4.5%</td>
+                            <td>3.00</td>
+                            <td>110°C: 950 / 900°C: 1000 / 1450°C: 1100</td>
+                            <td>90.0%</td>
+                            <td>1.0%</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+            <a href="/contact.html?product=low-cement" class="btn-quote">Request LC Quote</a>
         </div>
 
-        <!-- 9. Gunning Mass -->
-        <div class="product-card-horizontal reveal-up" id="gunning-mass">
-            <div class="product-img">
-                <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80" alt="Gunning Mass">
+        <!-- 6. Insulating Castables -->
+        <div class="product-card-fullwidth reveal-up" id="insulating">
+            <div class="product-header-inline">
+                <h3>Insulating Castables (MRCRETE Series)</h3>
+                <span class="product-badge" style="position: static;">Thermal Barrier</span>
             </div>
-            <div class="product-info">
-                <h3>Gunning Mass</h3>
-                <p>A refractory repair material applied using a gunning machine that sprays the material onto damaged refractory surfaces. The material forms a strong and durable layer that restores furnace lining integrity. Widely used for steel plant furnaces, ladle repair, kiln maintenance, and blast furnace maintenance.</p>
-                <div class="product-specs">
-                    <table>
-                        <thead>
-                            <tr><th>Property</th><th>Typical Value</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Aluminium Oxide (Al₂O₃)</td><td>45 – 65 %</td></tr>
-                            <tr><td>Iron Oxide (Fe₂O₃)</td><td>2 – 6 %</td></tr>
-                            <tr><td>Bulk Density</td><td>2.1 – 2.5 g/cm³</td></tr>
-                            <tr><td>Max. Service Temperature</td><td>1400 – 1600 °C</td></tr>
-                            <tr><td>Grain Size</td><td>Customizable</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
+            <p>
+                Lightweight refractory castables designed for thermal efficiency in both hot-face exposure and back-up safety lining. Drastically reduces shell temperatures and heat loss in furnaces, petrochemical vessels, and boilers.
+            </p>
+            <div class="specs-table-wrapper">
+                <table class="specs-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Max Temp (°C)</th>
+                            <th>Water Add. (%)</th>
+                            <th>Dry Density (g/cm³)</th>
+                            <th>CCS (kgf/cm²)</th>
+                            <th>Al₂O₃ (%)</th>
+                            <th>Fe₂O₃ (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>MRCRETE 11</strong></td>
+                            <td>1350°C</td>
+                            <td>35–40%</td>
+                            <td>1.25</td>
+                            <td>110°C: 700 / 900°C: 800 / 1100°C: 900</td>
+                            <td>45.0%</td>
+                            <td>1.0%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MRCRETE 13</strong></td>
+                            <td>1350°C</td>
+                            <td>30–35%</td>
+                            <td>1.50</td>
+                            <td>110°C: 750 / 900°C: 810 / 1100°C: 900</td>
+                            <td>60.0%</td>
+                            <td>1.0%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MRCRETE 15</strong></td>
+                            <td>1350°C</td>
+                            <td>30–35%</td>
+                            <td>1.60</td>
+                            <td>110°C: 800 / 900°C: 900 / 1300°C: 1000</td>
+                            <td>80.0%</td>
+                            <td>1.0%</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+            <a href="/contact.html?product=insulating-castables" class="btn-quote">Request Insulating Quote</a>
         </div>
 
-        <!-- 10. Trough Mass -->
-        <div class="product-card-horizontal reveal-up" id="trough-mass">
-            <div class="product-img">
-                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80" alt="Trough Mass">
+        <!-- 7. Fire Clay & High Alumina Mortars -->
+        <div class="product-card-fullwidth reveal-up" id="mortars">
+            <div class="product-header-inline">
+                <h3>Fire Clay &amp; High Alumina Mortar</h3>
+                <span class="product-badge" style="position: static;">Jointing Mortar</span>
             </div>
-            <div class="product-info">
-                <h3>Trough Mass</h3>
-                <p>Designed for lining blast furnace troughs used in iron and steel production. Protects the trough from erosion caused by molten metal and slag while ensuring smooth flow of molten iron. Offers strong resistance to thermal shock and chemical attack, ensuring a long operational life.</p>
-                <div class="product-specs">
-                    <table>
-                        <thead>
-                            <tr><th>Property</th><th>Typical Value</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Aluminium Oxide (Al₂O₃)</td><td>50 – 70 %</td></tr>
-                            <tr><td>Iron Oxide (Fe₂O₃)</td><td>2 – 5 %</td></tr>
-                            <tr><td>Bulk Density</td><td>2.2 – 2.6 g/cm³</td></tr>
-                            <tr><td>Max. Service Temperature</td><td>1500 – 1650 °C</td></tr>
-                            <tr><td>Grain Size</td><td>Customizable</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
+            <p>
+                Ceramic-setting mortars engineered for jointing refractory bricks and high-alumina blocks with high refractoriness, tight bonding, and thermal compatibility with parent refractory linings up to 1700°C.
+            </p>
+            <div class="specs-table-wrapper">
+                <table class="specs-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Service Temp (°C)</th>
+                            <th>Type of Setting</th>
+                            <th>Al₂O₃ (%)</th>
+                            <th>Fe₂O₃ (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>MR-50</strong></td>
+                            <td>1550°C</td>
+                            <td>Ceramic</td>
+                            <td>50.0%</td>
+                            <td>2.5%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MR-60</strong></td>
+                            <td>1600°C</td>
+                            <td>Ceramic</td>
+                            <td>60.0%</td>
+                            <td>2.5%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MR-70</strong></td>
+                            <td>1650°C</td>
+                            <td>Ceramic</td>
+                            <td>70.0%</td>
+                            <td>2.0%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MR-90</strong></td>
+                            <td>1700°C</td>
+                            <td>Ceramic</td>
+                            <td>90.0%</td>
+                            <td>0.5%</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+            <a href="/contact.html?product=mortars" class="btn-quote">Request Mortar Quote</a>
         </div>
 
-        <!-- 11. Mudgun Mass -->
-        <div class="product-card-horizontal reveal-up" id="mudgun-mass">
-            <div class="product-img">
-                <img src="https://images.unsplash.com/photo-1562408590-e32931084e23?auto=format&fit=crop&w=800&q=80" alt="Mudgun Mass">
+        <!-- 8. Gunning Mass & Maintenance Refractories -->
+        <div class="product-card-fullwidth reveal-up" id="gunning-mass">
+            <div class="product-header-inline">
+                <h3>High Alumina &amp; Basic Gunning Mass</h3>
+                <span class="product-badge" style="position: static;">Rapid Repair</span>
             </div>
-            <div class="product-info">
-                <h3>Mudgun Mass</h3>
-                <p>Used in blast furnaces for closing the tap hole after molten iron tapping operations. Must maintain plasticity during injection while developing high strength after application. Ensures safe and reliable sealing of the blast furnace tap hole with minimal rebound loss.</p>
-                <div class="product-specs">
-                    <table>
-                        <thead>
-                            <tr><th>Property</th><th>Typical Value</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Aluminium Oxide (Al₂O₃)</td><td>40 – 60 %</td></tr>
-                            <tr><td>Iron Oxide (Fe₂O₃)</td><td>2 – 6 %</td></tr>
-                            <tr><td>Bulk Density</td><td>2.0 – 2.4 g/cm³</td></tr>
-                            <tr><td>Max. Service Temperature</td><td>1400 – 1600 °C</td></tr>
-                            <tr><td>Plasticity Index</td><td>High</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
+            <p>
+                Specialized pneumatic repair compounds for hot and cold furnace maintenance. High Alumina Gunning mass is widely utilized in steel ladles, EAF sidewalls, and ladle refining furnaces (LRF), while Basic Gunning Mass is optimized for energy optimizing furnaces (EOF) with minimal rebound loss.
+            </p>
+            <div class="specs-table-wrapper">
+                <table class="specs-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>High Alumina Gunning</th>
+                            <th>Basic Gunning Mass</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Primary Component</strong></td>
+                            <td>Al₂O₃ (45%–70%)</td>
+                            <td>MgO (80%–85%)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Application Equipment</strong></td>
+                            <td>Pneumatic Gunning Machine</td>
+                            <td>Hot/Cold Gunning Gun</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rebound Loss</strong></td>
+                            <td>Ultra Low (&lt; 8%)</td>
+                            <td>Minimal (&lt; 10%)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Key Applications</strong></td>
+                            <td>Steel Ladles, EAF, Kilns</td>
+                            <td>EOF, BOF, Converter maintenance</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
-
-        <!-- 12. General Refractory Products -->
-        <div class="product-card-horizontal reveal-up" id="general-refractory">
-            <div class="product-img">
-                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="General Refractory Products">
-            </div>
-            <div class="product-info">
-                <h3>General Refractory Products</h3>
-                <p>General-purpose refractory materials suitable for a wide range of high-temperature industrial furnaces. Designed to withstand thermal stress, chemical attack, and mechanical wear. Available in customizable formulations providing cost-effective solutions for industrial furnaces, heat treatment furnaces, kilns, and thermal processing units.</p>
-                <div class="product-specs">
-                    <table>
-                        <thead>
-                            <tr><th>Property</th><th>Typical Value</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Aluminium Oxide (Al₂O₃)</td><td>40 – 70 %</td></tr>
-                            <tr><td>Iron Oxide (Fe₂O₃)</td><td>2 – 6 %</td></tr>
-                            <tr><td>Bulk Density</td><td>2.0 – 2.6 g/cm³</td></tr>
-                            <tr><td>Max. Service Temperature</td><td>1300 – 1700 °C</td></tr>
-                            <tr><td>Grain Size</td><td>Customizable</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div><a href="/contact.html" class="btn btn-accent">Request Quote</a></div>
-            </div>
+            <a href="/contact.html?product=gunning-mass" class="btn-quote">Request Gunning Quote</a>
         </div>
 
     </section>
 
+    <!-- Download Brochure CTA -->
+    <section class="cta-section reveal">
+        <div class="container">
+            <h2>Need comprehensive technical datasheets?</h2>
+            <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; font-size: 1.1rem;">
+                Download our complete 16-page official corporate brochure in high-resolution PDF format.
+            </p>
+            <a href="/MRAI_Company_Brochure.pdf" download="MRAI_Company_Brochure.pdf" class="btn btn-outline">Download Official PDF (8.7 MB)</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col reveal-up">
-                    <a href="/" class="navbar-brand" style="color: white; margin-bottom: 1rem;">
-                        MISUS <span style="color:var(--clr-accent)">REFRACTORY</span>
+                <div class="footer-col reveal">
+                    <a href="/" class="navbar-brand" style="margin-bottom: 1rem;">
+                        <div class="brand-text">
+                            <span class="brand-main" style="color: white;">MISUS <strong style="color: var(--clr-accent-light);">REFRACTORIES</strong></span>
+                            <span class="brand-sub" style="color: rgba(255,255,255,0.7);">&amp; Allied Industries</span>
+                        </div>
                     </a>
-                    <p>Manufacturer, Supplier & Exporter of Castables, Blast Furnace Ramming Mass & Allied Refractory Products from Bankura, West Bengal, India.</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Est. 2009 &bull; GST: 19AAWFM0044Q1ZI</p>
+                    <p>Manufacturer, Supplier &amp; Exporter of Castables, Blast Furnace Ramming Mass &amp; Allied Refractory Products from Bankura, West Bengal, India.</p>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 0.5rem;">
+                        ISO 9001:2015 &amp; ISO 45001:2018 Certified &bull; GST: <strong>19AAWFM0044Q1ZI</strong>
+                    </p>
                 </div>
-                <div class="footer-col reveal-up">
-                    <h4>Products</h4>
-                    <a href="#castables">Castables</a>
-                    <a href="#ramming-mass">Blast Furnace Ramming Mass</a>
-                    <a href="#nozzle-filling">Nozzle Filling Compound</a>
-                    <a href="#gunning-mass">Gunning Mass</a>
-                    <a href="#trough-mass">Trough Mass</a>
-                    <a href="#basic-monolithic">Basic Monolithic</a>
+                <div class="footer-col reveal">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/about.html">About Us</a>
+                    <a href="/products.html">Products &amp; Specifications</a>
+                    <a href="/contact.html">Contact Directory</a>
+                    <a href="/MRAI_Company_Brochure.pdf" download="MRAI_Company_Brochure.pdf">Download Brochure (PDF)</a>
                 </div>
-                <div class="footer-col reveal-up">
-                    <h4>Get In Touch</h4>
-                    <p>Hat, Ashuria More, U-Jambedia<br>Barjora, Bankura – 722202<br>West Bengal, India</p>
-                    <p><a href="tel:+919434216176" style="color:rgba(255,255,255,0.7)">+91 94342 16176</a></p>
-                    <p><a href="tel:+919332340870" style="color:rgba(255,255,255,0.7)">+91 93323 40870</a></p>
-                    <p><a href="mailto:misusbarjora@yahoo.com" style="color:rgba(255,255,255,0.7)">misusbarjora@yahoo.com</a></p>
+                <div class="footer-col reveal">
+                    <h4>Factory &amp; Works</h4>
+                    <p>Hat Ashuria More, Barjora<br>P.O. U-jambedia, Dist: Bankura<br>West Bengal – 722202, India</p>
+                    <p><a href="tel:+919434216176">+91 94342 16176</a> / <a href="tel:+919332297691">+91 93322 97691</a></p>
+                    <p><a href="mailto:misusbarjora@yahoo.com">misusbarjora@yahoo.com</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; <span id="year"></span> Misus Refractories And Allied Industries. All Rights Reserved.
+                &copy; <span id="year"></span> Misus Refractories &amp; Allied Industries (MRAI). All Rights Reserved.
             </div>
         </div>
     </footer>
 
     <script type="module" src="/src/main.js"></script>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
+
 </html>
