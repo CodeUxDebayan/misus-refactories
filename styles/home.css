@@ -21,12 +21,13 @@
 }
 
 
-/* === Hero Slideshow === */
+/* === Hero Slideshow (8 Slides, 32s Total Loop, 4s per slide) === */
 @keyframes heroSlide {
-  0%        { opacity: 1; transform: scale(1.0); }
-  20%       { opacity: 1; transform: scale(1.06); }
-  25%       { opacity: 0; transform: scale(1.08); }
-  100%      { opacity: 0; transform: scale(1.08); }
+  0%   { opacity: 0; transform: scale(1.0); }
+  2%   { opacity: 1; transform: scale(1.0); }
+  12.5% { opacity: 1; transform: scale(1.05); }
+  15%  { opacity: 0; transform: scale(1.07); }
+  100% { opacity: 0; transform: scale(1.07); }
 }
 
 .hero-slide {
@@ -37,11 +38,11 @@
   background-position: center center;
   background-repeat: no-repeat;
   opacity: 0;
-  animation: heroSlide 25s ease-in-out infinite;
+  animation: heroSlide 32s ease-in-out infinite;
   z-index: 0;
 }
 
-/* First slide starts immediately, no delay set */
+/* First slide starts immediately */
 .hero-slide:first-child {
   animation-delay: 0s;
 }
