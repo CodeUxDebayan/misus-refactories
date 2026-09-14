@@ -5,11 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "node node_modules/vite/bin/vite.js build",
+    "preview": "vite preview",
+    "postinstall": "chmod +x node_modules/.bin/* 2>/dev/null || true"
   },
   "devDependencies": {
     "vite": "^5.0.0"
+  },
+  "optionalDependencies": {
+    "@esbuild/linux-x64": "^0.21.5"
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
