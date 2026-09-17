@@ -63,20 +63,28 @@ if (mobileToggle && navLinks) {
 // Global Reveal Up animations (Replaces basic reveal)
 const revealUpEls = document.querySelectorAll('.reveal-up');
 revealUpEls.forEach((el) => {
-  gsap.fromTo(el, 
-    { y: 60, opacity: 0 },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1.2,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 85%',
-        toggleActions: 'play none none reverse'
+  if (el.closest('.hero')) {
+    // Normal fade-in on load for hero section elements (no scrollTrigger / scroll fading)
+    gsap.fromTo(el, 
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out', delay: 0.2 }
+    );
+  } else {
+    gsap.fromTo(el, 
+      { y: 60, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+          toggleActions: 'play none none reverse'
+        }
       }
-    }
-  );
+    );
+  }
 });
 
 // Staggered reveal for grids
@@ -113,4 +121,32 @@ if (heroLines.length > 0) {
             delay: 0.2 // Wait for initial load
         }
     );
+}
+
+// Auto-hide Hero content after 2s of inactivity & reduce darkening for clear slideshow
+const heroSection = document.querySelector('.hero');
+if (heroSection) {
+  let heroTimer;
+
+  const resetHeroTimer = () => {
+    heroSection.classList.remove('is-hidden');
+    clearTimeout(heroTimer);
+    heroTimer = setTimeout(() => {
+      if (window.scrollY < 400) {
+        heroSection.classList.add('is-hidden');
+      }
+    }, 2000);
+  };
+
+  // Start 2s timer on page load
+  heroTimer = setTimeout(() => {
+    if (window.scrollY < 400) {
+      heroSection.classList.add('is-hidden');
+    }
+  }, 2000);
+
+  // Show hero content on mouse movement, touch, or scroll
+  window.addEventListener('mousemove', resetHeroTimer, { passive: true });
+  window.addEventListener('touchstart', resetHeroTimer, { passive: true });
+  window.addEventListener('scroll', resetHeroTimer, { passive: true });
 }

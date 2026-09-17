@@ -2,13 +2,14 @@
 
 .hero {
   position: relative;
+  min-height: 850px;
   height: 100vh;
-  min-height: 600px;
   display: flex;
   align-items: center;
   overflow: hidden;
   color: white;
-  padding-top: 80px; 
+  padding-top: 100px;
+  padding-bottom: 80px; 
 }
 
 .hero-bg {
@@ -59,6 +60,12 @@
     rgba(10, 20, 35, 0.15) 100%
   );
   z-index: 1; /* Must sit above the slides */
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Lightened overlay when hero is hidden for crystal-clear slideshow view */
+.hero.is-hidden .hero-overlay {
+  opacity: 0.08;
 }
 
 .hero-content {
@@ -70,6 +77,14 @@
   align-items: flex-start !important;
   justify-content: center;
   width: 100%;
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Hide hero content when mouse is inactive for 2s */
+.hero.is-hidden .hero-content {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
 }
 
 .hero-subtitle {
@@ -99,7 +114,7 @@
 .hero-title {
   font-size: clamp(3rem, 7vw, 6rem);
   color: white;
-  margin-bottom: 4.5rem !important; /* Large distance/space in the middle separating header title from rest of content */
+  margin-bottom: calc(4.5rem + 140px) !important; /* Added 140px more distance between header title and paragraph content */
   line-height: 1.12;
   font-weight: 700;
   letter-spacing: -0.03em;
