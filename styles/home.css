@@ -64,11 +64,12 @@
 .hero-content {
   position: relative;
   z-index: 2; /* Content above overlay */
-  text-align: left;
+  text-align: left !important;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start !important;
   justify-content: center;
+  width: 100%;
 }
 
 .hero-subtitle {
@@ -81,7 +82,7 @@
   text-transform: uppercase;
   letter-spacing: 0.25em;
   color: var(--clr-accent-light); /* Orange accent line */
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-6);
   position: relative;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
 }
@@ -98,10 +99,11 @@
 .hero-title {
   font-size: clamp(3rem, 7vw, 6rem);
   color: white;
-  margin-bottom: var(--space-12);
-  line-height: 1.15;
+  margin-bottom: 4.5rem !important; /* Large distance/space in the middle separating header title from rest of content */
+  line-height: 1.12;
   font-weight: 700;
   letter-spacing: -0.03em;
+  text-align: left !important;
   text-shadow: 0 4px 22px rgba(0, 0, 0, 0.95), 0 2px 6px rgba(0, 0, 0, 0.9);
 }
 
@@ -109,12 +111,14 @@
 .hero-title .line-wrap {
   display: block;
   overflow: hidden;
+  text-align: left !important;
   padding-bottom: 0.15em;
   margin-bottom: -0.15em;
 }
 
 .hero-title .line {
   display: block;
+  text-align: left !important;
   padding-bottom: 0.08em;
 }
 
@@ -123,8 +127,9 @@
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--space-8);
   max-width: 720px;
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  text-align: left !important;
   font-weight: 300;
   line-height: 1.8;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
@@ -134,7 +139,7 @@
   display: flex;
   gap: var(--space-4);
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: flex-start !important;
 }
 
 .hero-actions .btn-outline {
