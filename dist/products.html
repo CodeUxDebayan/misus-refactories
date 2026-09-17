@@ -30,10 +30,10 @@
 
         .product-nav-strip {
             background: white;
-            box-shadow: var(--shadow-sm);
-            padding: 0.75rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            padding: 0.6rem 0;
             position: sticky;
-            top: 70px;
+            top: 64px;
             z-index: 100;
             border-bottom: 1px solid var(--clr-border);
         }
@@ -56,13 +56,51 @@
             transition: all var(--transition-fast);
         }
 
-        .product-nav-link:hover {
+        .product-nav-link:hover,
+        .product-nav-link.active {
             background: var(--clr-accent);
             color: white;
         }
 
         .product-list {
             padding: var(--space-12) 0 var(--space-20);
+        }
+
+        .product-card-horizontal,
+        .product-card-fullwidth {
+            scroll-margin-top: 140px;
+        }
+
+        .download-cta-section {
+            margin: var(--space-16) 0 var(--space-12);
+        }
+
+        .download-cta-card {
+            background: white;
+            border: 1px solid var(--clr-border);
+            border-radius: 8px;
+            padding: 3.5rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .download-cta-card h2 {
+            color: #0D1B2A;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .download-cta-card p {
+            color: #1A2B3C;
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .product-card-horizontal {
@@ -166,8 +204,8 @@
             color: white;
         }
     </style>
-  <script type="module" crossorigin src="/assets/main-jQLtxXZJ.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-DF-WcJVr.css">
+  <script type="module" crossorigin src="/assets/main-C7mlmdjt.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-BB8ZvbLz.css">
 </head>
 
 <body>
@@ -376,13 +414,8 @@
         </div>
 
         <!-- 4. Conventional Castables (MR-Crete Range) -->
-        <div class="product-card-horizontal reveal-up" id="castables">
-            <div class="product-img">
-                <img src="/images/products/cfm_309.webp" alt="MR-Crete Conventional Castables">
-                <span class="product-badge">Flagship</span>
-            </div>
-            <div class="product-info">
-                <h3>Conventional Castables (MR-Crete Range)</h3>
+        <div class="product-card-fullwidth reveal-up" id="castables">
+            <h3>Conventional Castables (MR-Crete Range)</h3>
                 <p>
                     Calcium Aluminate bonded refractories for applications up to 1400°C, and High Alumina grades bonded with premium refractory cement for service up to 1750°C. Delivers outstanding mechanical strength and volume stability across heating cycles.
                 </p>
@@ -685,13 +718,15 @@
     </section>
 
     <!-- Download Brochure CTA -->
-    <section class="cta-section reveal">
+    <section class="download-cta-section reveal-up">
         <div class="container">
-            <h2>Need comprehensive technical datasheets?</h2>
-            <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; font-size: 1.1rem;">
-                Download our complete 16-page official corporate brochure in high-resolution PDF format.
-            </p>
-            <a href="/MRAI_Company_Brochure.pdf" download="MRAI_Company_Brochure.pdf" class="btn btn-outline">Download Official PDF (8.7 MB)</a>
+            <div class="download-cta-card">
+                <h2>Need comprehensive technical datasheets?</h2>
+                <p>
+                    Download our complete 16-page official corporate brochure in high-resolution PDF format.
+                </p>
+                <a href="/MRAI_Company_Brochure.pdf" download="MRAI_Company_Brochure.pdf" class="btn btn-outline" style="border-color: #0D1B2A; color: #0D1B2A; font-weight: 600;">Download Official PDF Brochure (8.7 MB)</a>
+            </div>
         </div>
     </section>
 
@@ -734,6 +769,13 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+        const pLinks = document.querySelectorAll('.product-nav-link');
+        pLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                pLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
     </script>
 </body>
 
